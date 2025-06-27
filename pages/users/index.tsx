@@ -1,10 +1,10 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 
-import { User } from "../../interfaces";
-import { sampleUserData } from "../../utils/sample-data";
-import Layout from "../../components/Layout";
-import List from "../../components/List";
+import { User } from "@/shared/interfaces";
+import { sampleUserData } from "@/shared/utils/sample-data";
+import Layout from "@/shared/components/Layout";
+import List from "@/shared/components/List";
 
 type Props = {
   items: User[];
