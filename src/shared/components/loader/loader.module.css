@@ -1,7 +1,6 @@
 .loader{
     z-index: 100;
     @apply fixed left-0 top-0 flex items-center justify-center w-full h-[100svh];  
-    display: none;
 }
 
 .loader__bg{
@@ -32,7 +31,7 @@
 }
 
 .loader.animateLoader{
-    @apply opacity-0 transition-all delay-[2.5s];
+    @apply opacity-0 transition-all delay-[1s] pointer-events-none;
     transition-duration: 0.75s;
 }
 

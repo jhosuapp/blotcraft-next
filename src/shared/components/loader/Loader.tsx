@@ -6,7 +6,7 @@ const Loader = ():JSX.Element => {
 
     setTimeout(()=>{
         node.current && node.current.classList.add(styles.animateLoader);
-    },1000);
+    },1500);
 
     return (
         <section className={styles.loader} ref={ node }>

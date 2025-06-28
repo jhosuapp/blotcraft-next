@@ -26,11 +26,15 @@
 }
 
 .headerHamburgerActive {
-    @apply rotate-[180deg];
+    @apply rotate-[180deg] bg-white;
 }
 
 .headerHamburgerActive span:nth-child(2){
     @apply opacity-0;
+}
+
+.headerHamburgerActive span{
+    @apply bg-tertiary;
 }
 
 .headerHamburgerActive span:first-child{
@@ -46,6 +50,7 @@
 /* Menu */
 
 .headerMenu{
+    transition: .5s ease all;
     @apply fixed w-full h-[100svh] top-0 left-0 flex justify-center items-center opacity-0 pointer-events-none;
 }
 
@@ -66,8 +71,49 @@
     @apply w-[50%];
 }
 
+.headerMenu__info__title{
+    @apply text-[1.25vw] font-medium text-neutral-loaderPrimary;
+}
+
+.headerMenu__info__description{
+    @apply text-white text-[1.15vw] font-medium;
+}
+
+.headerMenuOpen{
+    @apply opacity-100 pointer-events-auto;
+}
+
+.headerMenu__info__item{
+    @apply mb-[20px] opacity-0;
+}
+
+.headerMenu__info__networks{
+    @apply flex gap-[10px];
+}
+
+.headerMenuOpen .HeaderMenuItem p{
+    @apply opacity-0 animate-textReveal odd:z-20;
+}
+
+.headerMenuOpen .headerMenu__info__item{
+    @apply mb-[20px] animate-fadeUp;
+}
+
+.headerMenuOpen .headerMenu__info__item:last-child{
+    animation-delay: 0.1s;
+}
+
 .headerMenu__nav ul{
     @apply flex flex-col gap-[20px];
+}
+
+@media(max-width: 1024px){
+    .headerMenu__info__title{
+        @apply text-[20px];
+    }    
+    .headerMenu__info__description{
+        @apply text-[19px];
+    }    
 }
 
 @media(max-width: 768px){
@@ -77,6 +123,12 @@
     .headerMenu__nav ul{
         @apply flex flex-col gap-[5px];
     }
+    .headerMenu__info__title{
+        @apply text-[18px];
+    }    
+    .headerMenu__info__description{
+        @apply text-[17px];
+    }    
 }
 
 /* Item */
@@ -102,7 +154,7 @@
 }
 
 .HeaderMenuItem p{
-    @apply opacity-0 animate-textReveal odd:z-20;
+    @apply opacity-0 odd:z-20;
 }
 
 .HeaderMenuItem:hover::before,
@@ -125,3 +177,31 @@
         @apply h-[3.5px] z-10 right-0 bottom-[7.5px];
     }
 }
+
+/* Network */
+
+.HeaderMenuNetwork{
+    @apply relative flex items-center justify-center w-[45px] h-[45px] bg-neutral-loaderPrimary rounded-[10px] p-[5px] mt-[5px] overflow-hidden;
+}
+
+.HeaderMenuNetwork::after{
+    content: "";
+    transition: .5s ease all;
+    @apply absolute w-full h-full bg-neutral-loaderSecondary rounded-full scale-0;
+}
+
+.HeaderMenuNetwork:hover::after{
+    @apply scale-150;
+}
+
+.HeaderMenuNetwork img{
+    @apply w-full block z-10;
+}
+
+@media(max-width: 768px){
+    .HeaderMenuNetwork{
+        @apply w-[30px] h-[30px] rounded-[5px];
+    }
+    
+}
+

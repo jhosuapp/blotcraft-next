@@ -42,14 +42,22 @@ module.exports = {
                     '0%': { opacity: 0 },
                     '100%': { opacity: 1 },
                 },
+                fadeUp: {
+                    '0%': { opacity: 0, transform: 'translateY(50px)' },
+                    '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
                 textReveal: {
                     from: {
                         opacity: '0.5',
-                        transform: 'translateX(100px)',
+                        transform: 'translateX(200px)',
+                    },
+                    '25%': {
+                        opacity: '1',
+                        transform: 'translateX(-15px)',
                     },
                     '50%': {
                         opacity: '1',
-                        transform: 'translateX(-20px)',
+                        transform: 'translateX(10px)',
                     },
                     to: {
                         opacity: '1',
@@ -59,7 +67,8 @@ module.exports = {
             },
             animation: {
                 fadeIn: 'fadeIn 1s ease',
-                textReveal: 'textReveal 1s ease 1 forwards'
+                fadeUp: 'fadeUp 1s ease forwards',
+                textReveal: 'textReveal 1.5s ease 1 forwards'
             },
             borderRadius: {
                 md: '0.5rem',
