@@ -2,7 +2,7 @@ import { minecraft, roboto, blockletter } from "@/config/typography";
 import previewImage from '@/config/assets/png/preview.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
-import { Header } from "@/shared/layouts/header/Header";
+import { Header } from "@/shared/layouts";
 
 type Props = {
   children?: ReactNode;
