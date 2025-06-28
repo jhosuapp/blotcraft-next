@@ -1,7 +1,7 @@
 import styles from './header.module.css';
-import { HeaderMenu } from "./HeaderMenu";
-import { HeaderLogo } from "./HeaderLogo";
-import { HeaderHamburger } from "./HeaderHamburger";
+import { HeaderMenu } from "./HeaderMenuBlot";
+import { HeaderLogo } from "./HeaderLogoBlot";
+import { HeaderHamburger } from "./HeaderHamburgerBlot";
 
 const Header = ():JSX.Element => {
     return (

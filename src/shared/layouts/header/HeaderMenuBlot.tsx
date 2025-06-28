@@ -1,6 +1,6 @@
 import { useMenuStore } from '@/shared/stores';
-import { HeaderMenuItem } from './HeaderMenuItem';
-import { HeaderMenuNetwork } from './HeaderMenuNetwork';
+import { HeaderMenuItem } from './HeaderMenuItemBlot';
+import { HeaderMenuNetwork } from './HeaderMenuNetworkBlot';
 
 import styles from './header.module.css';
 import discord from '@/config/assets/svg/icon-discord.svg';
