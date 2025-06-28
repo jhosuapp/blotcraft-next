@@ -2,7 +2,7 @@ import { minecraft, roboto, blockletter } from "@/config/typography";
 import previewImage from '@/config/assets/png/preview.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
-import { StaticImageData } from "next/image";
+import { Header } from "@/shared/layouts";
 
 type Props = {
   children?: ReactNode;
@@ -41,7 +41,9 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
       <meta name="theme-color" content="#1e1e1e" />
     </Head>
 
-    <main className={`${minecraft.variable} ${roboto.variable} ${blockletter.variable}`}>
+    <Header />
+
+    <main className={`pt-[80px] h-[200vh] px-[5%] ${minecraft.variable} ${roboto.variable} ${blockletter.variable}`}>
       {children}
     </main>
   </>

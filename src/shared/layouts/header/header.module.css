@@ -1,0 +1,127 @@
+/* Header */
+.header{
+    @apply w-full z-[99] fixed top-0 left-0 px-[5%] h-[80px] flex justify-between items-center;
+}
+
+/* Header logo */
+
+.headerLogo{
+    font-size: clamp(30px, 2vw, 2vw);
+    @apply flex leading-none font-block;
+}
+
+.headerLogo p{
+    font-size: clamp(30px, 2vw, 2vw);
+    @apply leading-none;
+}
+
+/* Header hamburger */
+.headerHamburger {
+    transition: .25s ease all;
+    @apply bg-tertiary flex justify-center flex-col items-center min-w-[40px] max-w-[2.5vw] w-[2.5vw] min-h-[40px] max-h-[2.5vw] h-[2.5vw] rounded-full;
+}
+
+.headerHamburger span{
+    @apply h-[2px] w-full max-w-[25px] bg-red-50 mb-[5px] last:mb-0;
+}
+
+.headerHamburgerActive {
+    @apply rotate-[180deg];
+}
+
+.headerHamburgerActive span:nth-child(2){
+    @apply opacity-0;
+}
+
+.headerHamburgerActive span:first-child{
+    transition: .5s ease transform;
+    @apply rotate-45 mb-0 absolute;
+}
+
+.headerHamburgerActive span:last-child{
+    transition: .5s ease transform;
+    @apply rotate-[-45deg] mb-0 absolute;
+}
+
+/* Menu */
+
+.headerMenu{
+    @apply fixed w-full h-[100svh] top-0 left-0 flex justify-center items-center opacity-0 pointer-events-none;
+}
+
+.headerMenu__bg{
+    @apply bg-tertiary fixed top-0 left-0 w-full h-[200vh];
+    /* background-color: rgb(199, 179, 215); */
+}
+
+.headerMenu__content{
+    @apply relative flex items-center justify-center w-full p-[5%];
+}
+
+.headerMenu__info{
+    @apply w-[50%];
+}
+
+.headerMenu__nav{
+    @apply w-[50%];
+}
+
+.headerMenu__nav ul{
+    @apply flex flex-col gap-[20px];
+}
+
+@media(max-width: 768px){
+    .headerMenu__content {
+        @apply flex-col-reverse justify-between items-start h-full pt-[100px];
+    }
+    .headerMenu__nav ul{
+        @apply flex flex-col gap-[5px];
+    }
+}
+
+/* Item */
+
+.HeaderMenuItem{
+    @apply text-white flex items-center font-bold text-[5vw] relative w-fit leading-none;
+}
+
+.HeaderMenuItem::before,
+.HeaderMenuItem::after{
+    content: "";
+    transition: .5s ease width;
+    @apply absolute w-0 h-[0.75vw] z-10 right-0 bottom-[1.5vw];
+}
+
+.HeaderMenuItem::before{
+    @apply bg-neutral-loaderPrimary;
+}
+
+.HeaderMenuItem::after{
+    transition-delay: 0.1s;
+    @apply bg-neutral-loaderSecondary;
+}
+
+.HeaderMenuItem p{
+    @apply opacity-0 animate-textReveal odd:z-20;
+}
+
+.HeaderMenuItem:hover::before,
+.HeaderMenuItem:hover::after{
+    @apply w-full left-0;
+}
+
+@media(max-width: 1024px){
+    .HeaderMenuItem{
+        @apply text-[35px];
+    }    
+}
+
+@media(max-width: 768px){
+    .HeaderMenuItem{
+        @apply text-[25px];
+    }    
+    .HeaderMenuItem::before,
+    .HeaderMenuItem::after{
+        @apply h-[3.5px] z-10 right-0 bottom-[7.5px];
+    }
+}

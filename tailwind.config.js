@@ -15,7 +15,7 @@ module.exports = {
             colors: {
                 primary: '#4284f5',
                 secondary: '#FFCC00',
-                tertiary: '#000000',
+                tertiary: '#1d1027',
                 neutral: {
                 black: '#202020',
                 white: '#FAFAFA',
@@ -39,12 +39,27 @@ module.exports = {
             },
             keyframes: {
                 fadeIn: {
-                '0%': { opacity: 0 },
-                '100%': { opacity: 1 },
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+                textReveal: {
+                    from: {
+                        opacity: '0.5',
+                        transform: 'translateX(100px)',
+                    },
+                    '50%': {
+                        opacity: '1',
+                        transform: 'translateX(-20px)',
+                    },
+                    to: {
+                        opacity: '1',
+                        transform: 'translateX(0) rotate(0deg)',
+                    },
                 },
             },
             animation: {
                 fadeIn: 'fadeIn 1s ease',
+                textReveal: 'textReveal 1s ease 1 forwards'
             },
             borderRadius: {
                 md: '0.5rem',
