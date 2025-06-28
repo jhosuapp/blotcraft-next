@@ -7,6 +7,11 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
+            fontFamily: {
+                roboto: "var(--font-roboto)",
+                minecraft: "var(--font-minecraft)",
+                block: "var(--font-block)",
+            },
             colors: {
                 primary: '#4284f5',
                 secondary: '#FFCC00',
@@ -14,6 +19,8 @@ module.exports = {
                 neutral: {
                 black: '#202020',
                 white: '#FAFAFA',
+                loaderPrimary: '#F50F0E',
+                loaderSecondary: '#3192D1',
                 },
                 feedback: {
                     error: {
