@@ -158,8 +158,13 @@
 }
 
 .HeaderMenuItem:hover::before,
-.HeaderMenuItem:hover::after{
+.HeaderMenuItem:hover::after,
+.HeaderMenuItemActive::before{
     @apply w-full left-0;
+}
+
+.HeaderMenuItemActive::before{
+    @apply z-0;
 }
 
 @media(max-width: 1024px){

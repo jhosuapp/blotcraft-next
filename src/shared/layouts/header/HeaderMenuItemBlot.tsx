@@ -1,4 +1,6 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
+
 import styles from './header.module.css';
 
 type Props = {
@@ -7,8 +9,11 @@ type Props = {
 }
 
 const HeaderMenuItem = ({ href, linkText }:Props):JSX.Element => {
+    const router = useRouter();
+    const isActive = router.pathname === href;
+
     return (
-        <Link href={ href } className={styles.HeaderMenuItem}>
+        <Link href={ href } className={`${styles.HeaderMenuItem} ${isActive ? styles.HeaderMenuItemActive : ''}`}>
             {linkText.split('').map((char, index) => (
                 <p
                     key={index}

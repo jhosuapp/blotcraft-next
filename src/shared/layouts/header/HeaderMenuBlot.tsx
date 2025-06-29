@@ -45,18 +45,24 @@ const HeaderMenu = ():JSX.Element => {
                         <li>
                             <HeaderMenuItem 
                                 href='/' 
+                                linkText='Blootcraft'
+                            />
+                        </li>
+                        <li>
+                            <HeaderMenuItem 
+                                href='/users' 
                                 linkText='FFA Diamond'
                             />
                         </li>
                         <li>
                             <HeaderMenuItem 
-                                href='/' 
+                                href='/api/users' 
                                 linkText='FFA Netherite'
                             />
                         </li>
                         <li>
                             <HeaderMenuItem 
-                                href='/' 
+                                href='/test' 
                                 linkText='Duels'
                             />
                         </li>

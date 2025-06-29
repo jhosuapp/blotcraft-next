@@ -11,6 +11,7 @@ const Loader = ():JSX.Element => {
     return (
         <section className={styles.loader} ref={ node }>
             <article className={styles.loader__bg}></article>
+            <article className={`${styles.loader__bg} ${styles.loader__bg__secondary}`}></article>
             <article className={styles.loader__content}>
                 <div className={styles.loader__text}>
                     <p style={{ animationDelay: '0.1s' }} className={`text-neutral-loaderPrimary ${styles.blot}`}>B</p>
