@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import styles from './header.module.css';
+import { useMenuStore } from "@/shared/stores";
 
 type Props = {
     href: string;
@@ -11,9 +12,14 @@ type Props = {
 const HeaderMenuItem = ({ href, linkText }:Props):JSX.Element => {
     const router = useRouter();
     const isActive = router.pathname === href;
+    const setHamburger = useMenuStore( state => state.setHamburger );
 
     return (
-        <Link href={ href } className={`${styles.HeaderMenuItem} ${isActive ? styles.HeaderMenuItemActive : ''}`}>
+        <Link 
+            onClick={ ()=> setHamburger(false) } 
+            href={ href } 
+            className={`${styles.HeaderMenuItem} ${isActive ? styles.HeaderMenuItemActive : ''}`}
+        >
             {linkText.split('').map((char, index) => (
                 <p
                     key={index}

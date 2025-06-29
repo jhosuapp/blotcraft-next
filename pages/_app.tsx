@@ -1,11 +1,13 @@
 import type { AppProps } from 'next/app';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import { Loader } from '@/shared/components';
 
 import './globals.css';
+import { PageTransition } from '@/shared/layouts';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     //Scroll smoth
     useEffect(() => {
         const lenis = new Lenis({
@@ -25,10 +27,24 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         };
     }, []);
 
+    // Hidde loader 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+        setIsLoading(false);
+        }, 2000);
+
+        return () => clearTimeout(timeout);
+    }, []);
+
     return (
         <>
-            <Loader />
-            <Component {...pageProps} />
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <PageTransition>
+                    <Component {...pageProps} />
+                </PageTransition>
+            )}
         </>
     )
     

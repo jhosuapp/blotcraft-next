@@ -43,7 +43,7 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
 
     <Header />
 
-    <main className={`pt-[80px] h-[200vh] px-[5%] ${minecraft.variable} ${roboto.variable} ${blockletter.variable}`}>
+    <main className={`pt-[80px] px-[5%] ${minecraft.variable} ${roboto.variable} ${blockletter.variable}`}>
       {children}
     </main>
   </>
