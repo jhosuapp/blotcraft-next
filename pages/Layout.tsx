@@ -3,6 +3,7 @@ import previewImage from '@/config/assets/png/preview.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
 import { Header } from "@/shared/layouts";
+import { Cursor } from "@/shared/components";
 
 type Props = {
   children?: ReactNode;
@@ -42,6 +43,8 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
     </Head>
 
     <Header />
+    
+    <Cursor />
 
     <main className={`pt-[80px] px-[5%] ${minecraft.variable} ${roboto.variable} ${blockletter.variable}`}>
       {children}

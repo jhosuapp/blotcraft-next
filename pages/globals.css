@@ -6,6 +6,30 @@ body {
     font-family: var(--font-roboto);
 }
 
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+body::-webkit-scrollbar-button:increment,&::-webkit-scrollbar-button {
+    display: none;
+} 
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px; 
+}  
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    @apply bg-tertiary border-tertiary;
+}
+
 h1, h2, h3, h4, h5, h6{
 }
 
