@@ -5,17 +5,22 @@ import { HeaderHamburger } from "./HeaderHamburgerBlot";
 import { Button } from '@/shared/components';
 import { useScroll } from '@/shared/hooks';
 
-const Header = ():JSX.Element => {
+type Props = {
+    isDark?: boolean;
+}
+
+const Header = ({ isDark }:Props):JSX.Element => {
     const scrollDirection = useScroll();
 
     return (
         <>
-            <header className={`${styles.header} ${styles[`header-${scrollDirection}`]}`}>
+            <header className={`${styles.header} ${styles[`header-${scrollDirection}`]} ${isDark && styles['header--light']}`}>
                 <HeaderLogo/>
                 <div className={styles.header__ctas}>
                     <Button 
                         text="let's talk"
                         style='primary'
+                        isLight={isDark}
                     />
                     <HeaderHamburger />
                 </div>

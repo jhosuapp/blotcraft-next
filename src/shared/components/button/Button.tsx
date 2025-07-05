@@ -7,13 +7,15 @@ import Image from 'next/image';
 type Props = {
     text: string;
     style?: 'primary';
+    isLight?: boolean;
 }
 
-const Button = ({ text, style }:Props):JSX.Element => {
+const Button = ({ text, style, isLight }:Props):JSX.Element => {
     const hamburger = useMenuStore( state => state.hamburger );
+    const isWhite = hamburger || isLight;
 
     return (
-        <button className={ `${styles.button} ${styles[`button--${style}`]} ${hamburger && styles['button--white']}` }>
+        <button className={ `${styles.button} ${styles[`button--${style}`]} ${isWhite ? styles['button--white'] : ''}` }>
             <Image src={ icon } alt="icono blootcraft"/>
             <span>{ text }</span>
             <b></b>

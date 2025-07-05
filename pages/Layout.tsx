@@ -11,10 +11,11 @@ type Props = {
   description: string;
   url?: string;
   image?: string;
+  isDark?: boolean;
 };
 
 
-const Layout = ({ children, title, description, image = previewImage.src, url = "https://www.blotcraft.com" }: Props) => (
+const Layout = ({ children, title, description, image = previewImage.src, url = "https://www.blotcraft.com", isDark }: Props) => (
   <>
     <Head>
       <title>{title}</title>
@@ -42,11 +43,11 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
       <meta name="theme-color" content="#1e1e1e" />
     </Head>
 
-    <Header />
+    <Header isDark={ isDark } />
     
     <Cursor />
 
-    <main className={`pt-[80px] px-[5%] ${minecraft.variable} ${roboto.variable} ${blockletter.variable}`}>
+    <main className={`pt-[80px] px-[5%] min-h-[100vh] ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDark && 'bg-tertiary'}`}>
       {children}
     </main>
   </>

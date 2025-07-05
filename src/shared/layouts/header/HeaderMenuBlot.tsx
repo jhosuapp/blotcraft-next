@@ -50,7 +50,7 @@ const HeaderMenu = ():JSX.Element => {
                         </li>
                         <li>
                             <HeaderMenuItem 
-                                href='/users' 
+                                href='/ffa-diamond' 
                                 linkText='FFA Diamond'
                             />
                         </li>

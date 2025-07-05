@@ -12,7 +12,6 @@
     @apply flex gap-[20px];
 }
 
-
 @media(max-width: 768px){
     .header__ctas{
         @apply gap-[10px];
@@ -29,6 +28,14 @@
 .headerLogo p{
     font-size: clamp(30px, 2vw, 2vw);
     @apply leading-none;
+}
+
+.headerLogo__item{
+    @apply text-tertiary;
+}
+
+.header--light .headerLogo__item{
+    @apply text-white;
 }
 
 /* Header hamburger */
@@ -61,6 +68,14 @@
 .headerHamburgerActive span:last-child{
     transition: .5s ease transform;
     @apply rotate-[-45deg] mb-0 absolute;
+}
+
+.header--light .headerHamburger{
+    @apply bg-white;
+}
+
+.header--light .headerHamburger span{
+    @apply bg-tertiary;
 }
 
 /* Menu */
