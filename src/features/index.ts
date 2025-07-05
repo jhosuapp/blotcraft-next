@@ -1,0 +1,1 @@
+export * from './ffa-diamond/views/FfaDiamond.view';

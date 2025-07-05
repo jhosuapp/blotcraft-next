@@ -9,7 +9,7 @@ const useScroll = () => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            if (currentScrollY > lastScrollY) {
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
                 setScrollDirection('down');
             } else if (currentScrollY < lastScrollY) {
                 setScrollDirection('up');
