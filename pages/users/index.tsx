@@ -13,6 +13,7 @@ type Props = {
 const WithStaticProps = ({ items }: Props) => (
   <Layout title="Users List | Next.js + TypeScript Example" description="test">
     <h1>Users List</h1>
+    {JSON.stringify(items)}
     <p>
       Example fetching data from inside <code>getStaticProps()</code>.
     </p>

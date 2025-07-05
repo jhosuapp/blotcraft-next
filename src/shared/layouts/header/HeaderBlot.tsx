@@ -3,11 +3,14 @@ import { HeaderMenu } from "./HeaderMenuBlot";
 import { HeaderLogo } from "./HeaderLogoBlot";
 import { HeaderHamburger } from "./HeaderHamburgerBlot";
 import { Button } from '@/shared/components';
+import { useScroll } from '@/shared/hooks';
 
 const Header = ():JSX.Element => {
+    const scrollDirection = useScroll();
+
     return (
         <>
-            <header className={styles.header}>
+            <header className={`${styles.header} ${styles[`header-${scrollDirection}`]}`}>
                 <HeaderLogo/>
                 <div className={styles.header__ctas}>
                     <Button 
