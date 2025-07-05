@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ffa_users {
+  id              Int     @id @default(autoincrement())
+  uuid            String  @db.MediumText
+  name            String  @db.MediumText
+  dateCreated     BigInt
+  last_online     BigInt
+  kitData         String  @db.MediumText
+  kills           Int
+  deaths          Int
+  killStreak      Int
+  bestStreak      Int
+  time            String  @db.MediumText
+  weather         Boolean
+  killsVisibility String  @db.MediumText
+}
