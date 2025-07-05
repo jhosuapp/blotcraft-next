@@ -11,16 +11,15 @@ module.exports = {
                 roboto: "var(--font-roboto)",
                 minecraft: "var(--font-minecraft)",
                 block: "var(--font-block)",
+                aeonik: "var(--font-aeonik)",
             },
             colors: {
-                primary: '#4284f5',
-                secondary: '#FFCC00',
+                primary: '#F50F0E',
+                secondary: '#3192D1',
                 tertiary: '#1d1027',
                 neutral: {
                 black: '#202020',
                 white: '#FAFAFA',
-                loaderPrimary: '#F50F0E',
-                loaderSecondary: '#3192D1',
                 },
                 feedback: {
                     error: {
@@ -35,7 +34,9 @@ module.exports = {
             },
             fontSize: {
                 title: '40px',
-                description: '20px'
+                description: '20px',
+                button: '16px',
+                buttonMobile: '14px'
             },
             keyframes: {
                 fadeIn: {

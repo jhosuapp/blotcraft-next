@@ -1,0 +1,75 @@
+.button{
+    @apply w-fit h-[2.5vw] min-h-[40px] min-w-[150px] flex justify-center items-center gap-[15px] relative overflow-hidden; 
+}
+
+.button span{
+    transition: .3s ease left;
+    @apply font-aeonik uppercase text-button relative left-0;
+}
+
+.button img{
+    filter: brightness(0) invert(1);
+    transition: .3s ease left;
+    @apply absolute left-[-20px];
+}
+
+.button b{
+    transition: .3s ease transform;
+    @apply flex items-center justify-center w-[5px] h-[10px] relative overflow-hidden;
+}
+
+.button b::before{
+    content: "";
+    @apply w-[5px] h-[5px] rounded-full bg-white;
+}
+
+.button:hover span{
+    @apply  left-[20px];
+}
+
+.button:hover b{
+    @apply  scale-0;
+}
+
+.button:hover img{
+    @apply absolute left-[15px];
+}
+
+@media(max-width: 768px){
+    .button span{
+        @apply text-buttonMobile;
+    }
+}
+
+/* Primary */
+.button--primary{
+    transition: .5s ease background-color;
+    @apply bg-tertiary rounded-full;
+}
+
+.button--primary:hover{
+    @apply bg-primary;
+}
+
+.button--primary span{
+    @apply text-white;
+}
+
+/* White */
+
+.button--white{
+    @apply bg-white;
+}
+
+.button--white span{
+    @apply text-tertiary;
+}
+
+
+.button--white b::before{
+    @apply bg-tertiary;
+}
+
+.button--white:hover span{
+    @apply text-white;
+}

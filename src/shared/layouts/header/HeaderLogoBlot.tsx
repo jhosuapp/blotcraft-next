@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { easeIn, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import styles from './header.module.css';
 
@@ -13,15 +13,15 @@ const HeaderLogo = ():JSX.Element => {
             }}
         >
             <Link href={'/'} className={styles.headerLogo}>
-                <span className={`text-neutral-loaderPrimary`}>B</span>
-                <span className={`text-neutral-loaderPrimary`}>L</span>
-                <span className={`text-neutral-loaderPrimary`}>O</span>
-                <span className={`text-neutral-loaderPrimary`}>T</span>
-                <span className={`text-neutral-loaderSecondary`}>C</span>
-                <span className={`text-neutral-loaderSecondary`}>R</span>
-                <span className={`text-neutral-loaderSecondary`}>A</span>
-                <span className={`text-neutral-loaderSecondary`}>F</span>
-                <span className={`text-neutral-loaderSecondary`}>T</span>
+                <span className={`text-tertiary`}>B</span>
+                <span className={`text-tertiary`}>L</span>
+                <span className={`text-tertiary`}>O</span>
+                <span className={`text-tertiary`}>T</span>
+                <span className={`text-tertiary`}>C</span>
+                <span className={`text-tertiary`}>R</span>
+                <span className={`text-tertiary`}>A</span>
+                <span className={`text-tertiary`}>F</span>
+                <span className={`text-tertiary`}>T</span>
             </Link>
         </motion.div>
     )

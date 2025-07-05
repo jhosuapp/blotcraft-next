@@ -37,3 +37,17 @@ export const blockletter = localFont({
     ],
     variable: '--font-block',
 });
+
+export const aeonik = localFont({
+    src: [
+        {
+            path: './fonts/Aeonik-Regular.woff2',
+            weight: '400',
+        },
+        {
+            path: './fonts/Aeonik-Medium.woff2',
+            weight: '500',
+        },
+    ],
+    variable: '--font-aeonik',
+});
