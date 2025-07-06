@@ -41,11 +41,11 @@ export const blockletter = localFont({
 export const aeonik = localFont({
     src: [
         {
-            path: './fonts/Aeonik-Regular.woff2',
+            path: './fonts/Aeonik-Regular.ttf',
             weight: '400',
         },
         {
-            path: './fonts/Aeonik-Medium.woff2',
+            path: './fonts/Aeonik-Medium.ttf',
             weight: '500',
         },
     ],
