@@ -1,4 +1,4 @@
-import { minecraft, roboto, blockletter } from "@/config/typography";
+import { minecraft, roboto, blockletter, aeonik } from "@/config/typography";
 import previewImage from '@/config/assets/png/preview.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
@@ -48,7 +48,7 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
     
     <Cursor />
 
-    <main className={`min-h-[100vh] relative overflow-hidden ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDarkBg && 'bg-tertiary'}`}>
+    <main className={`min-h-[100vh] relative overflow-hidden ${aeonik.variable} ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDarkBg && 'bg-tertiary'}`}>
       {children}
     </main>
   </>
