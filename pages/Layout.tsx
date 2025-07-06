@@ -48,7 +48,7 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
     
     <Cursor />
 
-    <main className={`min-h-[100vh] relative overflow-hidden ${aeonik.variable} ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDarkBg && 'bg-tertiary'}`}>
+    <main className={`min-h-[100vh] relative ${aeonik.variable} ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDarkBg && 'bg-tertiary'}`}>
       {children}
     </main>
   </>

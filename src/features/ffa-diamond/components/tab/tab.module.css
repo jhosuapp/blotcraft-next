@@ -1,0 +1,100 @@
+.tab{
+    @apply flex flex-col relative justify-start;
+}
+
+/* Tab buttons */
+
+.tabButtons{
+    @apply w-full flex bg-tertiary z-10;
+}
+
+.tabButton{
+    font-size:  clamp(18px, 1vw, 22px);
+    transition: .5s ease all;
+    @apply flex-1 flex justify-center items-center text-center min-h-[55px] text-white border;
+}
+
+.tabButton:hover,
+.tabButtonActive{
+    @apply bg-secondary;
+}
+
+@media(max-width: 768px){
+    .tabButtons{
+        @apply flex-col relative;
+    }
+    .tabButton{
+        @apply border-l-0 border-r-0;
+    }
+    .tabButton:first-child,
+    .tabButton:last-child{
+        @apply border-l-0 border-r-0;
+    }
+    .tabButton:nth-child(odd){
+        @apply border-l-0 ;
+    }
+}
+
+/* Tab content */
+.tabContent{
+    @apply relative overflow-auto;
+}
+
+.tabContentTitle{
+    font-size: clamp(25px, 3vw, 50px);
+    @apply text-white text-center my-[60px];
+}
+
+.tabContentHeadItem{
+    @apply bg-secondary rounded-t-[10px] min-h-[50px];
+}
+
+.tabContentHead,
+.tabContentBody{
+    @apply min-w-[400px];
+}
+
+.tabContentHeadItem,
+.tabContentBodyItem{
+    @apply flex gap-[20px] min-w-[400px];
+}
+
+.tabContentHeadItem p,
+.tabContentBodyItem p{
+    font-size: clamp(15px, 2vw, 20px);
+    @apply flex-1 text-white px-[20px] py-[10px] flex text-center justify-center items-center gap-[20px] relative overflow-hidden;
+}
+
+.tabContentHeadItem img,
+.tabContentBodyItem img{
+    @apply max-w-[30px];
+}
+
+.tabContentHeadItem p:first-child,
+.tabContentBodyItem p:first-child{
+    @apply justify-start;
+}
+
+.tabContentBodyItem{
+    @apply bg-black border-t odd:bg-gray-800;
+}
+
+/* Pager */
+
+.tabContentPager{
+    @apply min-h-[50px] w-full flex justify-end bg-secondary border-t rounded-b-[10px];
+}
+
+@media(max-width: 500px){
+    .tabContentHeadItem p,
+    .tabContentBodyItem p{
+        @apply px-[10px] max-w-[80px];
+    }
+    .tabContentHeadItem p:first-child,
+    .tabContentBodyItem p:first-child{
+        @apply min-w-[150px] max-w-[150px] text-ellipsis whitespace-nowrap;
+    }
+    .tabContentPager{
+        @apply justify-center;
+    }
+}

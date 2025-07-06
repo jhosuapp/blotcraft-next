@@ -13,15 +13,15 @@ type Props = {
 
 const HeroBanner = ({ title, subtitle, categories, textLink, image, altImage }:Props):JSX.Element => {
     return (
-        <>
+        <section className="relative overflow-hidden">
             <Container className={ styles.banner }>
                 <article className={ styles.bannerContent }>
                     <h1 className={ styles.bannerTitle }>{ title }</h1>
                     <h2 className={ styles.bannerSubititle }>{ subtitle }</h2>
                     <div className={ styles.bannerFlex }>
                         <ul className={ styles.bannerCategories }>
-                            {categories.map((data)=>(
-                            <li>{ data }</li> 
+                            {categories.map((data, index)=>(
+                            <li key={index}>{ data }</li> 
                             ))}
                         </ul>
                         <div className={ styles.bannerLink }>
@@ -33,7 +33,7 @@ const HeroBanner = ({ title, subtitle, categories, textLink, image, altImage }:P
             <section className={ styles.bannerImage }>
                 <Image src={ image } alt={ altImage } />
             </section>
-        </>
+        </section>
     )
 }
 

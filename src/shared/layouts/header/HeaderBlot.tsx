@@ -10,7 +10,7 @@ type Props = {
 }
 
 const Header = ({ isDark }:Props):JSX.Element => {
-    const scrollDirection = useScroll();
+    const scrollDirection = useScroll(100);
 
     return (
         <>

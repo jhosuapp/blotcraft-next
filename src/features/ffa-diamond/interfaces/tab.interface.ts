@@ -1,0 +1,1 @@
+export type Icategories = 'all' | 'deaths' | 'kills' | 'ks';

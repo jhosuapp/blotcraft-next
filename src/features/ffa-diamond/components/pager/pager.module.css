@@ -1,0 +1,33 @@
+.pager{
+    @apply flex items-center gap-2 justify-center px-[10px];
+}
+
+.pagerButton{
+    @apply px-2 py-1 rounded-[100px] disabled:opacity-50;
+}
+
+.pagerButton:disabled{
+    @apply hover:bg-transparent hover:cursor-not-allowed;
+}
+
+.pagerButton img{
+    transition: .5s ease all;
+    filter: invert(1);
+    @apply max-w-[15px];
+}
+
+.pagerItem {
+    @apply px-2 py-1 rounded-[100px] text-white;
+}
+
+.pagerItemActive{
+    @apply bg-tertiary;
+}
+
+.pagerItemHover{
+    @apply hover:bg-primary;
+}
+
+.pagerPoints{
+    @apply text-white;
+}

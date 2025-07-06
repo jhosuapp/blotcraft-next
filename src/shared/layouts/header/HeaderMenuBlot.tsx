@@ -56,7 +56,7 @@ const HeaderMenu = ():JSX.Element => {
                         </li>
                         <li>
                             <HeaderMenuItem 
-                                href='/api/users' 
+                                href='/ffa-netherite' 
                                 linkText='FFA Netherite'
                             />
                         </li>
