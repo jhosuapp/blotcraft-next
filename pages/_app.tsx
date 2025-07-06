@@ -5,9 +5,12 @@ import { Loader } from '@/shared/components';
 
 import './globals.css';
 import { PageTransition } from '@/shared/layouts';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [queryClient] = useState(() => new QueryClient());
     //Scroll smoth
     useEffect(() => {
         const lenis = new Lenis({
@@ -42,9 +45,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             {isLoading ? (
                 <Loader />
             ) : (
-                <PageTransition>
-                    <Component {...pageProps} />
-                </PageTransition>
+                <QueryClientProvider client={queryClient}>
+                    <PageTransition>
+                        <Component {...pageProps} />
+                    </PageTransition>
+                    {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen={false} />}
+                </QueryClientProvider>
             )}
         </>
     )
