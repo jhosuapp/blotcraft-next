@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const page = parseInt(req.query.page as string) || 1;
-        const pageSize = parseInt(req.query.pageSize as string) || 20;
+        const pageSize = parseInt(req.query.pageSize as string) || 10;
         const search = (req.query.search as string) || '';
 
         // Total de registros (con o sin filtro de búsqueda)

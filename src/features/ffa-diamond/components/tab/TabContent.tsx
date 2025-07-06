@@ -1,13 +1,13 @@
-import Image from "next/image";
+import { easeIn, motion } from 'framer-motion';
 
 import { Container } from "@/shared/components";
 import { Icategories } from "../../interfaces";
 import { useTabStore } from "../../stores";
 
 import styles from './tab.module.css';
-import steve from '@/config/assets/png/steve.png';
 import { Pager } from "../pager/Pager";
-import { useState } from "react";
+import { useFfaUsers } from "../../hooks";
+import { TabContentItem } from "./TabContentItem";
 
 type Props = {
     category: Icategories;
@@ -15,11 +15,25 @@ type Props = {
 
 const TabContent = ({ category }:Props):JSX.Element => {
     const currentCategory = useTabStore( state => state.currentCategory );
-    const [currentPage, setCurrentPage] = useState<number>(1);
+    const { page, setPage, ffaUsersQuery }  = useFfaUsers({ search: '' });
+    
+
+    if(ffaUsersQuery.isLoading){
+        return (
+            <p>Cargando...</p>
+        )
+    }
 
     return (
         <Container>
-            <section className={ styles.tabContent }>
+            <motion.section className={ styles.tabContent }
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.25,
+                    ease: easeIn
+                }}
+            >
                 <article className={ styles.tabContentHead }>
                     <div className={ styles.tabContentHeadItem }>
                         <p>Name</p>
@@ -30,25 +44,25 @@ const TabContent = ({ category }:Props):JSX.Element => {
                     </div>
                 </article>
                 <article className={ styles.tabContentBody }>
-                    <div className={ styles.tabContentBodyItem }>
-                        <p>
-                            <Image src={ steve } alt="steve head" />
-                            Jhosuapp
-                        </p>
-                        <p>100</p>
-                        <p>100</p>
-                        <p>50</p>
-                        <p>1</p>
-                    </div>
+                    {ffaUsersQuery.data && ffaUsersQuery.data.data.map((data, index)=>(
+                        <TabContentItem data={data} key={index} />
+                    ))}
                 </article>
-            </section>
-            <section className={styles.tabContentPager}>
+            </motion.section>
+            <motion.section className={styles.tabContentPager}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.25,
+                    ease: easeIn
+                }}
+            >
                 <Pager
-                    totalPages={2456}
-                    currentPage={currentPage}
-                    onPageChange={(page) => setCurrentPage(page)}
+                    totalPages={ffaUsersQuery.data.pagination.totalPages}
+                    currentPage={page}
+                    onPageChange={(page) => setPage(page)}
                 />
-            </section>
+            </motion.section>
         </Container>
     )
 }
