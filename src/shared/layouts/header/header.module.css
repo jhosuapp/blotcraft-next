@@ -82,7 +82,7 @@
 
 .headerMenu{
     transition: .5s ease all;
-    @apply fixed w-full h-[100svh] top-0 left-0 flex justify-center items-center opacity-0 pointer-events-none;
+    @apply fixed w-full h-[100svh] top-0 left-0 flex justify-center items-center opacity-0 pointer-events-none z-50;
 }
 
 .headerMenu__bg{

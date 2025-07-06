@@ -1,0 +1,74 @@
+.banner {
+    @apply min-h-[600px] w-[110%] left-[-5%] z-10 px-[10%] pt-[80px] pb-[140px] bg-white flex items-end;
+    border-bottom-left-radius: 3500px 313px;
+    border-bottom-right-radius: 3500px 313px;
+}
+
+.bannerContent{
+    @apply z-10 relative w-full;
+}
+
+.bannerTitle{
+    font-size: clamp(50px, 5vw, 90px);
+    @apply font-medium leading-none;
+}
+
+.bannerSubititle{
+    font-size: clamp(25px, 5vw, 40px);
+    @apply font-medium text-secondary leading-none my-[20px];
+}
+
+.bannerCategories{
+    font-size: clamp(18px, 5vw, 20px);
+    @apply flex gap-[10px];
+}
+
+.bannerCategories li{
+    @apply flex items-center gap-[10px];
+}
+
+.bannerCategories li::before{
+    content: "";
+    @apply relative w-[7.5px] h-[7.5px] bg-secondary flex rounded-full;
+}
+
+.bannerCategories li:first-child:before{
+    content: none;
+}
+
+.bannerFlex{
+    @apply flex justify-between;
+}
+
+.bannerLink{
+    @apply text-right w-full relative w-fit;
+}
+
+.bannerLink a{
+    font-size: clamp(22px, 5vw, 24px);
+    @apply font-medium;
+}
+
+.bannerLink a::before{
+    content: "";
+    transition: .5s ease all;
+    @apply w-full h-[2px] bg-secondary block bottom-[-5px] absolute left-0;
+}
+
+.bannerLink a:hover::before{
+    content: "";
+    @apply w-[0px] left-[unset] right-0;
+}
+
+.bannerImage img{
+    @apply w-full object-cover max-h-[450px] min-h-[40vh] relative top-[-100px] mb-[-100px];
+}
+
+@media(max-width: 768px){
+    .banner {
+        @apply pb-[60px] min-h-[550px];
+    }
+    .bannerFlex{
+        @apply flex-col gap-[30px];
+    }
+}

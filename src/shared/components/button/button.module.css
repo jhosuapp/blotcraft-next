@@ -48,7 +48,7 @@
 }
 
 .button--primary:hover{
-    @apply bg-primary;
+    @apply bg-secondary;
 }
 
 .button--primary span{

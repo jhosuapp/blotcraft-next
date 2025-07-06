@@ -33,7 +33,6 @@ const FloatingDots = () => {
             }, 20000);
         }, 150);
 
-        
         return () => clearInterval(interval);
     }, []);
 
