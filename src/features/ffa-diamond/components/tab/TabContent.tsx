@@ -1,6 +1,6 @@
 import { easeIn, motion } from 'framer-motion';
 
-import { Container } from "@/shared/components";
+import { Container, Feedback, LoaderSecondary } from "@/shared/components";
 import { Icategories } from "../../interfaces";
 import { useTabStore } from "../../stores";
 
@@ -17,15 +17,28 @@ const TabContent = ({ category }:Props):JSX.Element => {
     const currentCategory = useTabStore( state => state.currentCategory );
     const { page, setPage, ffaUsersQuery }  = useFfaUsers({ search: '' });
     
-
+    // Catch loading
     if(ffaUsersQuery.isLoading){
         return (
-            <p>Cargando...</p>
+            <LoaderSecondary 
+                className='!min-h-[700px]'
+            />
+        )
+    }
+
+    // Catch error
+    if(ffaUsersQuery.isError){
+        return (
+            <Feedback
+                className='!min-h-[700px]'
+                texFeedback='Killer es gay y por eso no ha cargado la base de datos'
+            />
         )
     }
 
     return (
         <Container>
+
             <motion.section className={ styles.tabContent }
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

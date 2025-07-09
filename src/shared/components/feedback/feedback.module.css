@@ -1,0 +1,22 @@
+.feedback{
+    @apply flex flex-col gap-[20px] w-full justify-center items-center min-h-[500px] animate-fadeIn;
+}
+
+.feedbackSvg{
+    @apply max-w-[200px] block w-full;
+}
+
+.feedbackPath{
+    @apply stroke-secondary;
+}
+
+.feedbackText{
+    font-size: clamp(18px, 2vw, 25px);
+    @apply text-white text-center;
+}
+
+@media(max-width: 768px){
+    .feedbackSvg{
+        @apply max-w-[125px];
+    }
+}
