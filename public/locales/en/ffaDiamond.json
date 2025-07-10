@@ -1,0 +1,11 @@
+{
+    "top10Deaths": "Top 10 deaths",
+    "top10Kills": "Top 10 kills",
+    "top10Streak": "Top 10 kill streak",
+
+    "userName": "Name",
+    "userKills": "Kills",
+    "userDeaths": "Deaths",
+    "userKS": "Kill streak",
+    "userKDR": "KDR"
+}

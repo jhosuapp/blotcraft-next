@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'; 
 import { easeIn, motion } from 'framer-motion';
 
 import { Container, Feedback, LoaderSecondary } from "@/shared/components";
@@ -15,8 +16,9 @@ type Props = {
 }
 
 const TabContent = ({ category }:Props):JSX.Element => {
-    const currentCategory = useTabStore( state => state.currentCategory );
+    const { t } = useTranslation('ffaDiamond');
     const { page, setPage, ffaUsersQuery, search, setSearch }  = useFfaUsers();
+
     
     // Catch loading
     if(ffaUsersQuery.isLoading){
@@ -86,11 +88,11 @@ const TabContent = ({ category }:Props):JSX.Element => {
             >
                 <article className={ styles.tabContentHead }>
                     <div className={ styles.tabContentHeadItem }>
-                        <p>Nombre</p>
-                        <p>Asesinatos</p>
-                        <p>Muertes</p>
-                        <p>Racha</p>
-                        <p>KDR</p>
+                        <p>{t('userName')}</p>
+                        <p>{t('userKills')}</p>
+                        <p>{t('userDeaths')}</p>
+                        <p>{t('userKS')}</p>
+                        <p>{t('userKDR')}</p>
                     </div>
                 </article>
                 <article className={ styles.tabContentBody }>

@@ -1,12 +1,16 @@
-import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
-import Lenis from 'lenis';
-import { Loader } from '@/shared/components';
+import type { AppProps } from 'next/app';
 
-import './globals.css';
-import { PageTransition } from '@/shared/layouts';
+import Lenis from 'lenis';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+import { Loader } from '@/shared/components';
+import { PageTransition } from '@/shared/layouts';
+
+import './globals.css';
+
+import './i18n';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -54,5 +58,4 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             )}
         </>
     )
-    
 }
