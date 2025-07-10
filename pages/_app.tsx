@@ -10,7 +10,7 @@ import { PageTransition } from '@/shared/layouts';
 
 import './globals.css';
 
-import './i18n';
+import '@/shared/lib/i18n';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
