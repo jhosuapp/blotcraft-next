@@ -1,4 +1,6 @@
 import { HTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import styles from './loaderSecondary.module.css';
 
 type NativeProps = HTMLAttributes<HTMLElement>;
@@ -11,6 +13,8 @@ type CustomProps = {
 type Props = NativeProps & CustomProps;
 
 const LoaderSecondary = ({ textLoader, className, ...props }:Props):JSX.Element => {
+    const { t } = useTranslation('translation');
+
     return (
         <section 
             className={`${styles.loaderSecondary} ${className ?? ''}`}
@@ -23,7 +27,7 @@ const LoaderSecondary = ({ textLoader, className, ...props }:Props):JSX.Element 
                 <span className={`${styles.loaderSeconaryInner} ${styles.loaderInner4}`}></span>
             </article>
             <article className={ styles.loaderSecondaryText}>
-                <p>{textLoader ?? 'Cargando'}</p>
+                <p>{textLoader ?? t('loader.textDefault')}</p>
             </article>
         </section>
     )

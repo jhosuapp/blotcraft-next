@@ -1,4 +1,8 @@
 {
+    "title": "Todos contra todos diamente PVP",
+    "discord": "Síguenos en discord",
+
+    "allUsers": "All users",
     "top10Deaths": "Top 10 muertes",
     "top10Kills": "Top 10 asesinatos",
     "top10Streak": "Top 10 rachad de muertes",
@@ -7,5 +11,10 @@
     "userKills": "Asesinatos",
     "userDeaths": "Muertes",
     "userKS": "Racha",
-    "userKDR": "KDR"
+    "userKDR": "KDR",
+
+    "searchButton": "Buscar",
+    "searchPlaceholder": "Buscar por nombre",
+
+    "notResults": "No hemos encontrado resultados para"
 }

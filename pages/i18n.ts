@@ -8,7 +8,7 @@ i18n
   .use(HttpApi)
   .use(initReactI18next)
   .init({
-    supportedLngs: ['es', 'en'], // Lista de idiomas soportados
+    supportedLngs: ['es', 'en'],
     fallbackLng: 'es',
     detection: {
       order: ['path', 'cookie', 'navigator'],

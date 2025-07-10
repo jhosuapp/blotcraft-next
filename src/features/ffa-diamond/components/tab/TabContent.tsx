@@ -57,7 +57,7 @@ const TabContent = ({ category }:Props):JSX.Element => {
                 </motion.section>
                 <Feedback
                     className='!min-h-[500px]'
-                    texFeedback={ `No hemos encontrado resultados para '${ search }'` }
+                    texFeedback={ `${ t('notResults') } '${ search }'` }
                 />
             </Container>
         )

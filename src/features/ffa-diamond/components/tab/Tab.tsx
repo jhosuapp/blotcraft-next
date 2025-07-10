@@ -1,25 +1,28 @@
+import { useTranslation } from 'react-i18next';
 import styles from './tab.module.css';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 
 const Tab = ():JSX.Element => {
+    const { t } = useTranslation('ffaDiamond');
+
     return (
         <section className={ styles.tab }>
             <section className={ styles.tabButtons }>
                 <TabButton 
-                    text='Todos los usuarios'
+                    text={ t('allUsers') }
                     category='all'
                 />
                 <TabButton 
-                    text='Top 10 muertes'
+                    text={ t('top10Deaths') }
                     category='deaths'
                 />
                 <TabButton 
-                    text='Top 10 asesinatos'
+                    text={ t('top10Kills') }
                     category='kills'
                 />
                 <TabButton 
-                    text='Top 10 rachas de asesinatos'
+                    text={ t('top10Streak') }
                     category='ks'
                 />
             </section>

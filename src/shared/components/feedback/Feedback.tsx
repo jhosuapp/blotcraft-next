@@ -3,6 +3,7 @@ import { motion, MotionProps } from 'framer-motion';
 
 import styles from './feedback.module.css';
 import { containerVariants, pathVariants } from './feedback.motion';
+import { useTranslation } from 'react-i18next';
 
 type NativeProps = HTMLAttributes<HTMLElement>;
 
@@ -14,6 +15,7 @@ type CustomProps = {
 type Props = NativeProps & CustomProps & MotionProps;
 
 const Feedback = ({ texFeedback, className, ...props }:Props): JSX.Element => {
+    const { t } = useTranslation('translation');
 
     return (
         <section className={`${styles.feedback} ${className ?? ''}`}>
@@ -38,7 +40,7 @@ const Feedback = ({ texFeedback, className, ...props }:Props): JSX.Element => {
                 </motion.svg>
             </motion.article>
             <motion.article className={styles.feedbackText}>
-                <p>{texFeedback ?? 'Ha ocurrido un error inesperado'}</p>
+                <p>{texFeedback ?? t('feedback.textDefault')}</p>
             </motion.article>
         </section>
     )

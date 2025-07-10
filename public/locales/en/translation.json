@@ -1,0 +1,20 @@
+{
+    "header": {
+        "cta": "Let's talk",
+        "talk": "Let's talk",
+        "social": "Socials",
+
+        "link1": "Blootcraft",
+        "link2": "FFA Diamond",
+        "link3": "FFA Netherite",
+        "link4": "Duels"
+    },
+
+    "feedback": {
+        "textDefault": "An unexpected error has occurred"
+    },
+
+    "loader": {
+        "textDefault": "Loading"
+    }
+}

@@ -1,4 +1,8 @@
 {
+    "title": "Free For All Diamond PVP",
+    "discord": "Follow us on Discord",
+
+    "allUsers": "Todos los usuarios",
     "top10Deaths": "Top 10 deaths",
     "top10Kills": "Top 10 kills",
     "top10Streak": "Top 10 kill streak",
@@ -7,5 +11,10 @@
     "userKills": "Kills",
     "userDeaths": "Deaths",
     "userKS": "Kill streak",
-    "userKDR": "KDR"
+    "userKDR": "KDR",
+
+    "searchButton": "Search",
+    "searchPlaceholder": "Search by name",
+
+    "notResults": "We haven't found any results for"
 }

@@ -1,14 +1,25 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { minecraft, roboto, blockletter, aeonik } from '@/config/typography';
 
-export default function Document() {
-  return (
-    <Html lang="es" className={`${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${aeonik.variable}`}>
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
+class MyDocument extends Document {
+  render() {
+    const { locale } = this.props.__NEXT_DATA__ || { locale: 'es' };
+
+    console.log(locale);
+
+    return (
+      <Html 
+        lang={locale} 
+        className={`${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${aeonik.variable}`}
+      >
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
+
+export default MyDocument;
