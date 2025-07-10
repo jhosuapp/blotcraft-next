@@ -11,7 +11,7 @@ type CustomProps = {
     text: string;
     style?: 'primary' | 'secondary';
     isLight?: boolean;
-    className: string;
+    className?: string;
     icon?: string;
 }
 
