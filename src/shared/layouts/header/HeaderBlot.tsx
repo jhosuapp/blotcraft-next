@@ -18,7 +18,7 @@ const Header = ({ isDark }:Props):JSX.Element => {
                 <HeaderLogo/>
                 <div className={styles.header__ctas}>
                     <Button 
-                        text="let's talk"
+                        text="Escríbenos"
                         style='primary'
                         isLight={isDark}
                     />

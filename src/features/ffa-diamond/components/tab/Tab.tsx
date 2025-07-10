@@ -7,19 +7,19 @@ const Tab = ():JSX.Element => {
         <section className={ styles.tab }>
             <section className={ styles.tabButtons }>
                 <TabButton 
-                    text='All'
+                    text='Todos los usuarios'
                     category='all'
                 />
                 <TabButton 
-                    text='Top 10 deaths'
+                    text='Top 10 muertes'
                     category='deaths'
                 />
                 <TabButton 
-                    text='Top 10 kills'
+                    text='Top 10 asesinatos'
                     category='kills'
                 />
                 <TabButton 
-                    text='Top 10 kill streak'
+                    text='Top 10 rachas de asesinatos'
                     category='ks'
                 />
             </section>

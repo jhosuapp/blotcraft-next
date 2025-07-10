@@ -55,7 +55,7 @@ const TabContent = ({ category }:Props):JSX.Element => {
                 </motion.section>
                 <Feedback
                     className='!min-h-[500px]'
-                    texFeedback={ `We couldn't find any results for '${ search }'` }
+                    texFeedback={ `No hemos encontrado resultados para '${ search }'` }
                 />
             </Container>
         )
@@ -86,10 +86,10 @@ const TabContent = ({ category }:Props):JSX.Element => {
             >
                 <article className={ styles.tabContentHead }>
                     <div className={ styles.tabContentHeadItem }>
-                        <p>Name</p>
-                        <p>Kills</p>
-                        <p>Deaths</p>
-                        <p>KillStreak</p>
+                        <p>Nombre</p>
+                        <p>Asesinatos</p>
+                        <p>Muertes</p>
+                        <p>Racha</p>
                         <p>KDR</p>
                     </div>
                 </article>

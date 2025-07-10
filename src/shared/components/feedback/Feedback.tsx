@@ -38,7 +38,7 @@ const Feedback = ({ texFeedback, className, ...props }:Props): JSX.Element => {
                 </motion.svg>
             </motion.article>
             <motion.article className={styles.feedbackText}>
-                <p>{texFeedback ?? 'An unexpected error has occurred'}</p>
+                <p>{texFeedback ?? 'Ha ocurrido un error inesperado'}</p>
             </motion.article>
         </section>
     )

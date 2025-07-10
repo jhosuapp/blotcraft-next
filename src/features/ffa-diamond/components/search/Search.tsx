@@ -20,7 +20,7 @@ const Search = ({ search, setSearch }:Props):JSX.Element => {
                 value={ localSearch }
             />
             <Button 
-                text={'search'}
+                text={'Buscar'}
                 style="secondary"
                 className={ styles.searchButton }   
                 icon={ icon }             

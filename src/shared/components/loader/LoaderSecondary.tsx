@@ -23,7 +23,7 @@ const LoaderSecondary = ({ textLoader, className, ...props }:Props):JSX.Element 
                 <span className={`${styles.loaderSeconaryInner} ${styles.loaderInner4}`}></span>
             </article>
             <article className={ styles.loaderSecondaryText}>
-                <p>{textLoader ?? 'Loading'}</p>
+                <p>{textLoader ?? 'Cargando'}</p>
             </article>
         </section>
     )

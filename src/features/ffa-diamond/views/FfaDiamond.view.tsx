@@ -12,7 +12,7 @@ const FfaDiamondView = ():JSX.Element => {
                 title={'Free For All Diamond PVP'}
                 subtitle={'Blootcraft'}
                 categories={['FFA', 'PVP', 'Minecraft', '1.12+']}
-                textLink={'Follow in discord'}
+                textLink={'Síguenos en discord'}
                 image={ image }
                 altImage={'Ffa diamond blootcraft banner'}
             />
