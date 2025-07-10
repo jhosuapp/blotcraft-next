@@ -79,6 +79,10 @@
     @apply bg-black border-t odd:bg-gray-800;
 }
 
+.tabContentParent{
+    @apply py-[60px];
+}
+
 /* Pager */
 
 .tabContentPager{

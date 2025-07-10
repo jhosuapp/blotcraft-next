@@ -18,7 +18,6 @@ const FfaDiamondView = ():JSX.Element => {
             />
             {/* Tab categories */}
             <Tab />
-            <div style={{ paddingBottom: '80px' }}></div>
         </>
     )
 }

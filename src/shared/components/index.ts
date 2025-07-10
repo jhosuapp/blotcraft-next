@@ -6,3 +6,4 @@ export * from './container/Container';
 export * from './hero-banner/HeroBanner';
 export * from './loader/LoaderSecondary';
 export * from './feedback/Feedback';
+export * from './input/Input';

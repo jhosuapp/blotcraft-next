@@ -2,13 +2,10 @@ import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react";
 import { getFfaUsers } from "../actions";
 
-type Props = {
-    search: string;
-}
-
-const useFfaUsers = ({ search }:Props) => {
+const useFfaUsers = () => {
 
     const [page, setPage] = useState<number>(1);
+    const [search, setSearch] = useState<string>('');
 
     const ffaUsersQuery = useQuery({
         queryKey: ['ffaUsers', { page, search }],
@@ -25,7 +22,9 @@ const useFfaUsers = ({ search }:Props) => {
     return {
         ffaUsersQuery,
         page,
-        setPage
+        setPage,
+        search,
+        setSearch
     }
 }
 

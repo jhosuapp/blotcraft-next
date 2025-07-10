@@ -1,0 +1,7 @@
+.search{
+    @apply relative max-w-[500px] m-auto pb-[60px];
+}
+
+.searchButton{
+    @apply absolute z-10 right-0 top-0;
+}

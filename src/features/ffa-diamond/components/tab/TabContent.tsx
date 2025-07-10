@@ -8,6 +8,7 @@ import styles from './tab.module.css';
 import { Pager } from "../pager/Pager";
 import { useFfaUsers } from "../../hooks";
 import { TabContentItem } from "./TabContentItem";
+import { Search } from '../search/Search';
 
 type Props = {
     category: Icategories;
@@ -15,7 +16,7 @@ type Props = {
 
 const TabContent = ({ category }:Props):JSX.Element => {
     const currentCategory = useTabStore( state => state.currentCategory );
-    const { page, setPage, ffaUsersQuery }  = useFfaUsers({ search: '' });
+    const { page, setPage, ffaUsersQuery, search, setSearch }  = useFfaUsers();
     
     // Catch loading
     if(ffaUsersQuery.isLoading){
@@ -31,14 +32,50 @@ const TabContent = ({ category }:Props):JSX.Element => {
         return (
             <Feedback
                 className='!min-h-[700px]'
-                texFeedback='Killer es gay y por eso no ha cargado la base de datos'
             />
         )
     }
 
-    return (
-        <Container>
+    // Catch error
+    if(!ffaUsersQuery.data.data.length || !ffaUsersQuery.data.data){
+        return (
+            <Container className={ styles.tabContentParent }>
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                        duration: 0.25,
+                        ease: easeIn
+                    }}
+                >
+                    <Search 
+                        search={ search }
+                        setSearch={ setSearch }
+                    />
+                </motion.section>
+                <Feedback
+                    className='!min-h-[500px]'
+                    texFeedback={ `We couldn't find any results for '${ search }'` }
+                />
+            </Container>
+        )
+    }
 
+    return (
+        <Container className={ styles.tabContentParent }>
+            <motion.section
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.25,
+                    ease: easeIn
+                }}
+            >
+                <Search 
+                    search={search}
+                    setSearch={ setSearch }
+                />
+            </motion.section>
             <motion.section className={ styles.tabContent }
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

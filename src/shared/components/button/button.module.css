@@ -2,6 +2,10 @@
     @apply w-fit h-[2.5vw] min-h-[40px] min-w-[150px] flex justify-center items-center gap-[15px] relative overflow-hidden; 
 }
 
+.button__icon{
+    @apply max-w-[17px] block w-full;
+}
+
 .button span{
     transition: .3s ease left;
     @apply font-aeonik uppercase text-button relative left-0;
@@ -52,6 +56,20 @@
 }
 
 .button--primary span{
+    @apply text-white;
+}
+
+/* secondary */
+.button--secondary{
+    transition: .5s ease background-color;
+    @apply bg-secondary rounded-full;
+}
+
+.button--secondary:hover{
+    @apply bg-secondary;
+}
+
+.button--secondary span{
     @apply text-white;
 }
 
