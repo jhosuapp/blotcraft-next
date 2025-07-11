@@ -16,6 +16,9 @@
     .header__ctas{
         @apply gap-[10px];
     }
+    .header__ctaMobile{
+        @apply hidden;
+    }
 }
 
 /* Header logo */

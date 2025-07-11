@@ -8,16 +8,17 @@ import { ButtonHTMLAttributes } from 'react';
 type NativeProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 type CustomProps = {
-    text: string;
+    text?: string;
     style?: 'primary' | 'secondary';
     isLight?: boolean;
     className?: string;
     icon?: string;
+    iconRight?: string;
 }
 
 type Props = CustomProps & NativeProps;
 
-const Button = ({ text, style, isLight, className, icon, ...props }:Props):JSX.Element => {
+const Button = ({ text, style, isLight, className, icon, iconRight, ...props }:Props):JSX.Element => {
     const hamburger = useMenuStore( state => state.hamburger );
     const isWhite = hamburger || isLight;
 
@@ -32,7 +33,15 @@ const Button = ({ text, style, isLight, className, icon, ...props }:Props):JSX.E
                 alt="icono blootcraft"
             />
             <span>{ text }</span>
-            <b></b>
+            {iconRight ? (
+                <Image 
+                    className={ styles.button__iconSecondary }
+                    src={ iconRight } 
+                    alt="icono blootcraft"
+                />
+            ) : (
+                <b></b>
+            )}
         </button>
     )
 }

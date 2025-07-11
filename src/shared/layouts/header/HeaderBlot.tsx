@@ -4,7 +4,7 @@ import styles from './header.module.css';
 import { HeaderMenu } from "./HeaderMenuBlot";
 import { HeaderLogo } from "./HeaderLogoBlot";
 import { HeaderHamburger } from "./HeaderHamburgerBlot";
-import { Button } from '@/shared/components';
+import { Button, LanguageSwitcher } from '@/shared/components';
 import { useScroll } from '@/shared/hooks';
 
 type Props = {
@@ -21,10 +21,12 @@ const Header = ({ isDark }:Props):JSX.Element => {
                 <HeaderLogo/>
                 <div className={styles.header__ctas}>
                     <Button 
+                        className={ styles.header__ctaMobile }
                         text={ t('header.cta') }
                         style='primary'
                         isLight={isDark}
                     />
+                    <LanguageSwitcher />
                     <HeaderHamburger />
                 </div>
             </header>

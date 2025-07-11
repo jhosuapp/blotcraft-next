@@ -11,10 +11,15 @@
     @apply font-aeonik uppercase text-button relative left-0;
 }
 
-.button img{
+.button__icon {
     filter: brightness(0) invert(1);
     transition: .3s ease left;
     @apply absolute left-[-20px];
+}
+
+.button__iconSecondary{
+    transition: .3s ease all;
+    @apply w-[22.5px] relative right-0;
 }
 
 .button b{
@@ -35,13 +40,20 @@
     @apply  scale-0;
 }
 
-.button:hover img{
+button:hover .button__iconSecondary{
+    @apply right-[-15px];
+}
+
+.button:hover .button__icon{
     @apply absolute left-[15px];
 }
 
 @media(max-width: 768px){
     .button span{
         @apply text-buttonMobile;
+    }
+    .button__iconSecondary{
+        @apply w-[20px];
     }
 }
 

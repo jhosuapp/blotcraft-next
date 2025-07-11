@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     // Hidde loader 
     useEffect(() => {
         const timeout = setTimeout(() => {
-        setIsLoading(false);
+            setIsLoading(false);
         }, 2000);
 
         return () => clearTimeout(timeout);
