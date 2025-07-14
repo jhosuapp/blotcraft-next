@@ -1,16 +1,20 @@
 import { FfaDiamondView } from "@/features";
 import { useScrollLimit } from "@/shared/hooks";
 import Layout from "pages/Layout";
+import { useTranslation } from "react-i18next";
 
 const FfaDiamond = ():JSX.Element => {
+    const { t } = useTranslation('ffaDiamond');
     const scrollLimit = useScrollLimit(900);
 
     return (
         <Layout 
-            title="Minecraft PvP al Máximo Nivel | Blotcraft Oficial"
-            description="Únete a Blotcraft, el servidor de Minecraft PvP en español donde el combate es intenso, la competencia es real y cada partida cuenta. ¡Entra ahora y demuestra tu habilidad!"
+            title={t('seo.title')}
+            description={t('seo.description')}
             isDarkBg
             isDark={scrollLimit}
+            textPage={t('seo.nextPage')}
+            linkPage={'/ffa-netherite'}
         >
             <FfaDiamondView />
         </Layout>

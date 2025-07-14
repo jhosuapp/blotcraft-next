@@ -33,6 +33,20 @@ body::-webkit-scrollbar-thumb {
 h1, h2, h3, h4, h5, h6{
 }
 
+.hoverLine{
+    @apply relative;
+}
+
+.hoverLine::before{
+    content: "";
+    transition: .5s ease all;
+    @apply w-[0] absolute right-0 bottom-0 bg-secondary h-[2px];
+}
+
+.hoverLine:hover::before{
+    @apply w-full left-0;
+}
+
 
 @keyframes text-reveal {
     from{

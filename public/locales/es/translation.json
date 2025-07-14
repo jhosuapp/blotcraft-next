@@ -10,11 +10,28 @@
         "link4": "Duelos"
     },
 
+    "footer": {
+        "store": "Tienda:",
+        "copyright": "©2024 blotcraft",
+        "built": "Desarrollado por",
+
+        "nextTitle": "Da click en siguiente",
+        "nextDescription": "Para obtener mas información sobre:",
+        "nextCta": "SIGUIENTE"
+    },
+
     "feedback": {
         "textDefault": "Ha ocurrido un error inesperado"
     },
 
     "loader": {
         "textDefault": "Cargando"
+    },
+
+    "seo":{
+        "title": "Minecraft PvP al Máximo Nivel | Blotcraft Oficial",
+        "description": "Únete a Blotcraft, el servidor de Minecraft PvP en español donde el combate es intenso, la competencia es real y cada partida cuenta. ¡Entra ahora y demuestra tu habilidad!",
+
+        "nextPage": "FFA DIAMOND"
     }
 }

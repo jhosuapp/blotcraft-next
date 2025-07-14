@@ -16,5 +16,12 @@
     "searchButton": "Buscar",
     "searchPlaceholder": "Buscar por nombre",
 
-    "notResults": "No hemos encontrado resultados para"
+    "notResults": "No hemos encontrado resultados para",
+
+    "seo": {    
+        "title": "FFA diamond | Blotcraft Oficial",
+        "description": "Explora FFA Diamond en Minecraft: combate libre con armadura de diamante, estrategia y acción PvP intensas. ¡Demuestra quién es el mejor guerrero!",
+
+        "nextPage": "FFA NETHERITE"
+    }
 }

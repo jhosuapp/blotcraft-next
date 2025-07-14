@@ -10,11 +10,28 @@
         "link4": "Duels"
     },
 
+    "footer": {
+        "store": "Store:",
+        "copyright": "©2024 blotcraft",
+        "built": "Built by",
+
+        "nextTitle": "Click Next",
+        "nextDescription": "To get more information about:",
+        "nextCta": "NEXT"
+    },
+
     "feedback": {
         "textDefault": "An unexpected error has occurred"
     },
 
     "loader": {
         "textDefault": "Loading"
+    },
+
+    "seo":{
+        "title": "Minecraft PvP at the Highest Level | Blotcraft Official",
+        "description": "Join Blotcraft, the Spanish-speaking Minecraft PvP server where battles are intense, competition is real, and every match matters. Jump in and show your skills!",
+
+        "nextPage": "FFA DIAMOND"
     }
 }

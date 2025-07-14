@@ -80,7 +80,7 @@
 }
 
 .tabContentParent{
-    @apply py-[60px] min-h-[700px];
+    @apply min-h-[700px];
 }
 
 /* Pager */

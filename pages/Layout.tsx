@@ -2,7 +2,7 @@ import { minecraft, roboto, blockletter, aeonik } from "@/config/typography";
 import previewImage from '@/config/assets/png/preview.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
-import { Header } from "@/shared/layouts";
+import { Footer, Header } from "@/shared/layouts";
 import { Cursor } from "@/shared/components";
 
 type Props = {
@@ -13,10 +13,13 @@ type Props = {
   image?: string;
   isDark?: boolean;
   isDarkBg?: boolean;
+  textPage: string;
+  linkPage: string;
 };
 
 
-const Layout = ({ children, title, description, image = previewImage.src, url = "https://www.blotcraft.com", isDark, isDarkBg }: Props) => (
+const Layout = (
+  { children, title, description, image = previewImage.src, url = "https://www.blotcraft.com", isDark, isDarkBg, textPage, linkPage }: Props) => (
   <>
     <Head>
       <title>{title}</title>
@@ -51,6 +54,11 @@ const Layout = ({ children, title, description, image = previewImage.src, url = 
     <main className={`min-h-[100vh] relative ${aeonik.variable} ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDarkBg && 'bg-tertiary'}`}>
       {children}
     </main>
+
+    <Footer 
+      textPage={textPage} 
+      linkPage={linkPage}
+    />
   </>
 );
 
