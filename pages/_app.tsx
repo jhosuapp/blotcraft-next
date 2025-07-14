@@ -11,6 +11,7 @@ import { PageTransition } from '@/shared/layouts';
 import './globals.css';
 
 import '@/shared/lib/i18n';
+import Script from 'next/script';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -46,6 +47,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V2NFQ30ZZ6"></Script>
+            <Script>
+                {`        
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-V2NFQ30ZZ6');
+                `}
+            </Script>
             {isLoading ? (
                 <Loader />
             ) : (

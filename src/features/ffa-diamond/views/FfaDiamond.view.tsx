@@ -14,11 +14,11 @@ const FfaDiamondView = ():JSX.Element => {
             {/* Hero banner */}
             <HeroBanner 
                 title={ t('title') }
-                subtitle={'Blootcraft'}
+                subtitle={'Blotcraft'}
                 categories={['FFA', 'PVP', 'Minecraft', '1.12+']}
                 textLink={ t('discord') }
                 image={ image }
-                altImage={ 'discord blootcraft' }
+                altImage={ 'discord blotcraft' }
             />
             {/* Tab categories */}
             <Tab />

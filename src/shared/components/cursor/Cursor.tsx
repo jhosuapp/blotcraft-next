@@ -53,7 +53,7 @@ const Cursor = ():JSX.Element => {
                 top: springY,
             }} 
         >
-            <Image src={ pick } alt="espada blootcraft"></Image>
+            <Image src={ pick } alt="espada blotcraft"></Image>
         </motion.div>
     )
 }

@@ -3,5 +3,5 @@
 }
 
 .searchButton{
-    @apply absolute z-10 right-0 top-0;
+    @apply !absolute z-10 right-0 top-0;
 }

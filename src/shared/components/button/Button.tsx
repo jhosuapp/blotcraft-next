@@ -30,14 +30,14 @@ const Button = ({ text, style, isLight, className, icon, iconRight, ...props }:P
             <Image 
                 className={ styles.button__icon }
                 src={ icon ? icon : iconDefault } 
-                alt="icono blootcraft"
+                alt="icono blotcraft"
             />
             <span>{ text }</span>
             {iconRight ? (
                 <Image 
                     className={ styles.button__iconSecondary }
                     src={ iconRight } 
-                    alt="icono blootcraft"
+                    alt="icono blotcraft"
                 />
             ) : (
                 <b></b>

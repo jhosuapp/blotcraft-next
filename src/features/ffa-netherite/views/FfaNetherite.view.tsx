@@ -7,11 +7,11 @@ const FfaNetheriteView = ():JSX.Element => {
             <FloatingDots />
             <HeroBanner 
                 title={'Free For All Netherite PVP'}
-                subtitle={'Blootcraft'}
+                subtitle={'Blotcraft'}
                 categories={['FFA', 'PVP', 'Minecraft', '1.12+', 'Netherite']}
                 textLink={'Síguenos en discord'}
                 image={ image }
-                altImage={'Ffa diamond blootcraft banner'}
+                altImage={'Ffa diamond blotcraft banner'}
             />
             <Feedback
                 className='!min-h-[700px]'
