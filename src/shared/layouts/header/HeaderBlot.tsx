@@ -31,7 +31,7 @@ const Header = ({ isDark }:Props):JSX.Element => {
                     <HeaderHamburger />
                 </div>
             </header>
-            <HeaderMenu />
+            <HeaderMenu translation={ t } />
         </>
     )
 }

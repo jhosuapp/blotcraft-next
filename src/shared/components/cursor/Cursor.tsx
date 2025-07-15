@@ -4,12 +4,12 @@ import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 import styles from './cursor.module.css';
 import pick from '@/config/assets/png/icon-pick.png';
+import { useCursorStore } from "@/shared/stores";
 
 const Cursor = ():JSX.Element => {
-    const [coords, setCoords] = useState<{clientX: number, clientY: number}>({
-        clientX: 0,
-        clientY: 0,
-    });
+    const coords = useCursorStore( state => state.coords );
+    const setCoords = useCursorStore( state => state.setCoords );
+    const initCoords = coords.clientX === 0 && coords.clientY === 0;
     //Get body
     const body = document.body;
     //Handler when mouse move
@@ -47,7 +47,7 @@ const Cursor = ():JSX.Element => {
 
     return (
         <motion.div 
-            className={ styles.cursor }
+            className={ `${styles.cursor} ${initCoords && 'opacity-0'}` }
             style={{ 
                 left: springX, 
                 top: springY,

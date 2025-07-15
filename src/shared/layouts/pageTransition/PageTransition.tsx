@@ -7,6 +7,7 @@ import { routes } from '@/shared/constants';
 
 import styles from './pageTransition.module.css';
 import { SVG } from './PageTransitionSVG';
+import { useLoaderStore } from '@/shared/stores';
 
 type Props = {
     children: ReactNode;
@@ -14,6 +15,7 @@ type Props = {
 
 const PageTransition = ({ children }:Props):JSX.Element => {
     const router = useRouter();
+    const isLoadingDelay = useLoaderStore( state => state.isLoadingDelay );
     const [dimensions, setDimensions] = useState({
         width: null,
         height: null
@@ -34,13 +36,13 @@ const PageTransition = ({ children }:Props):JSX.Element => {
     }, []);
 
     return (
-        <div className={ styles.curve }>
-            <div style={{opacity: dimensions.width == null ? 1 : 0}} className={ styles.curve__bg } />
-            <motion.p className={ styles.curve__route } {...anim(text)}>
+        <div className={ `${styles.curve} ${isLoadingDelay && 'animate-fadeIn'}` }>
+            <div style={{opacity: dimensions.width == null ? 1 : 0}} className={ `${styles.curve__bg} ${isLoadingDelay && '!hidden'}` } />
+            <motion.p className={ `${styles.curve__route} ${isLoadingDelay && '!hidden'}` } {...anim(text)}>
                 {routes[router.route]}
             </motion.p>
             {dimensions.width != null && (
-                <div className={ styles.curve__svg }>
+                <div className={ `${styles.curve__svg} ${isLoadingDelay && '!hidden'}` }>
                     <SVG {...dimensions}/>
                 </div>
             )}

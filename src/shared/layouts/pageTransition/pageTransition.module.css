@@ -9,5 +9,5 @@
 }
 .curve .curve__route{
     font-size: clamp(25px, 6vw, 70px);
-    @apply absolute text-tertiary text-center z-[97] left-[50%] top-[40vh] translate-x-[-50%] font-medium uppercase pointer-events-none;
+    @apply fixed text-tertiary text-center z-[97] left-[50%] top-[40vh] translate-x-[-50%] font-medium uppercase pointer-events-none;
 }

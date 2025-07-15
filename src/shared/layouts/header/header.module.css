@@ -201,6 +201,10 @@
     @apply z-0;
 }
 
+.HeaderMenuItemActive{
+    @apply pointer-events-none;
+}
+
 @media(max-width: 1024px){
     .HeaderMenuItem{
         @apply text-[35px];

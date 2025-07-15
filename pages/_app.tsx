@@ -11,10 +11,12 @@ import { Loader } from '@/shared/components';
 
 import './globals.css';
 import '@/shared/lib/i18n';
+import { useLoaderStore } from '@/shared/stores';
 
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
-    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const isLoading = useLoaderStore( state => state.isLoading );
+    const setIsLoading = useLoaderStore( state => state.setIsLoading );
     const [queryClient] = useState(() => new QueryClient());
     //Scroll smoth
     useEffect(() => {
@@ -38,11 +40,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
 
     // Hidde loader 
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            setIsLoading(false);
-        }, 2250);
-
-        return () => clearTimeout(timeout);
+        setIsLoading();
     }, []);
 
     return (

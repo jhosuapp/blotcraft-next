@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useMenuStore } from '@/shared/stores';
 import { HeaderMenuItem } from './HeaderMenuItemBlot';
 import { HeaderMenuNetwork } from './HeaderMenuNetworkBlot';
@@ -7,9 +6,13 @@ import styles from './header.module.css';
 import discord from '@/config/assets/svg/icon-discord.svg';
 import instagram from '@/config/assets/svg/icon-instagram.svg';
 import youtube from '@/config/assets/svg/icon-youtube.svg';
+import { Transalations } from '@/shared/interfaces';
 
-const HeaderMenu = ():JSX.Element => {
-    const { t } = useTranslation('translation');
+type Props = {
+    translation: Transalations;
+}
+
+const HeaderMenu = ({ translation }:Props):JSX.Element => {
     const hamburger = useMenuStore( state => state.hamburger );
 
     return (
@@ -18,11 +21,11 @@ const HeaderMenu = ():JSX.Element => {
             <section className={styles.headerMenu__content}>
                 <article className={styles.headerMenu__info}>
                     <div className={styles.headerMenu__info__item}>
-                        <p className={styles.headerMenu__info__title}>{ t('header.talk') }</p>
+                        <p className={styles.headerMenu__info__title}>{ translation('header.talk') }</p>
                         <a className={styles.headerMenu__info__description} href='mailto:blotcraftnetwork@gmail.com '>blotcraftnetwork@gmail.com </a>
                     </div>
                     <div className={styles.headerMenu__info__item}>
-                        <p className={styles.headerMenu__info__title}>{ t('header.social') }</p>
+                        <p className={styles.headerMenu__info__title}>{ translation('header.social') }</p>
                         <div className={styles.headerMenu__info__networks}>
                             <HeaderMenuNetwork 
                                 src={discord} 
@@ -47,25 +50,25 @@ const HeaderMenu = ():JSX.Element => {
                         <li>
                             <HeaderMenuItem 
                                 href='/' 
-                                linkText={ t('header.link1') }
+                                linkText={ translation('header.link1') }
                             />
                         </li>
                         <li>
                             <HeaderMenuItem 
                                 href='/ffa-diamond' 
-                                linkText={ t('header.link2') }
+                                linkText={ translation('header.link2') }
                             />
                         </li>
                         <li>
                             <HeaderMenuItem 
                                 href='/ffa-netherite' 
-                                linkText={ t('header.link3') }
+                                linkText={ translation('header.link3') }
                             />
                         </li>
                         <li>
                             <HeaderMenuItem 
                                 href='/test' 
-                                linkText={ t('header.link4') }
+                                linkText={ translation('header.link4') }
                             />
                         </li>
                     </ul>
