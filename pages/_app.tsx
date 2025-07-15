@@ -11,7 +11,7 @@ import { Loader } from '@/shared/components';
 
 import './globals.css';
 import '@/shared/lib/i18n';
-import { useLoaderStore } from '@/shared/stores';
+import { useLenisStore, useLoaderStore } from '@/shared/stores';
 
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
@@ -25,17 +25,14 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
             lerp: 0.1, 
         });
-    
+        //Set lenis
+        useLenisStore.getState().setLenis(lenis);    
         function raf(time: number) {
             lenis.raf(time);
             requestAnimationFrame(raf);
         }
-    
         requestAnimationFrame(raf);
-    
-        return () => {
-            lenis.destroy();
-        };
+        return () => lenis.destroy();
     }, []);
 
     // Hidde loader 
