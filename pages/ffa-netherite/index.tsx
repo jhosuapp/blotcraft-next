@@ -1,4 +1,5 @@
 import { FfaNetheriteView } from "@/features";
+import { PageTransition } from "@/shared/layouts";
 import Layout from "pages/Layout";
 
 const FfaNetherite = ():JSX.Element => {
@@ -10,7 +11,9 @@ const FfaNetherite = ():JSX.Element => {
             textPage={'Duels'}
             linkPage={'/duels'}
         >
-            <FfaNetheriteView />
+            <PageTransition>
+                <FfaNetheriteView />
+            </PageTransition>
         </Layout>
     )
 }

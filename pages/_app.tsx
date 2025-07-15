@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
+import Script from 'next/script';
+import { AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 import Lenis from 'lenis';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { Loader } from '@/shared/components';
-import { PageTransition } from '@/shared/layouts';
 
 import './globals.css';
-
 import '@/shared/lib/i18n';
-import Script from 'next/script';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+
+export default function MyApp({ Component, pageProps, router }: AppProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [queryClient] = useState(() => new QueryClient());
     //Scroll smoth
@@ -40,7 +40,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
+        }, 2250);
 
         return () => clearTimeout(timeout);
     }, []);
@@ -61,9 +61,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 <Loader />
             ) : (
                 <QueryClientProvider client={queryClient}>
-                    <PageTransition>
-                        <Component {...pageProps} />
-                    </PageTransition>
+                    <AnimatePresence mode='wait'>
+                        <Component key={router.route} {...pageProps} />
+                    </AnimatePresence>
                     {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen={false} />}
                 </QueryClientProvider>
             )}

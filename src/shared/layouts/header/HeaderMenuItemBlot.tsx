@@ -14,9 +14,13 @@ const HeaderMenuItem = ({ href, linkText }:Props):JSX.Element => {
     const isActive = router.pathname === href;
     const setHamburger = useMenuStore( state => state.setHamburger );
 
+    const onClickHamburger = () => {
+        setTimeout(()=>{ setHamburger(false) },1000);
+    }
+
     return (
         <Link 
-            onClick={ ()=> setHamburger(false) } 
+            onClick={ onClickHamburger } 
             href={ href } 
             className={`${styles.HeaderMenuItem} ${isActive ? styles.HeaderMenuItemActive : ''}`}
         >

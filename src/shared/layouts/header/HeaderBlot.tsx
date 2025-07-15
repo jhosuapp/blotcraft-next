@@ -25,6 +25,7 @@ const Header = ({ isDark }:Props):JSX.Element => {
                         text={ t('header.cta') }
                         style='primary'
                         isLight={isDark}
+                        onClick={ ()=> window.location.href = 'mailto:blotcraftnetwork@gmail.com' }
                     />
                     <LanguageSwitcher />
                     <HeaderHamburger />

@@ -25,7 +25,7 @@ const HeroBanner = ({ title, subtitle, categories, textLink, image, altImage }:P
                             ))}
                         </ul>
                         <div className={ styles.bannerLink }>
-                            <a href="#">{ textLink }</a>
+                            <a href="https://discord.com/invite/blotcraft" target="_blank">{ textLink }</a>
                         </div>
                     </div>
                 </article>

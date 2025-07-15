@@ -9,7 +9,7 @@
 
 .loader__bg__secondary{
     transition: .5s ease all;
-    @apply bg-white rounded-full scale-0 h-[150vh] w-[150vh] left-[unset] top-[unset];
+    @apply bg-cuartary rounded-full scale-0 h-[150vh] w-[150vh] left-[unset] top-[unset];
 }
 
 .loader p {

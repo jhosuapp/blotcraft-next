@@ -18,6 +18,7 @@ module.exports = {
                 secondary: '#3192D1',
                 // tertiary: '#1d1027',
                 tertiary: '#1a151a',
+                cuartary: '#F0F1FA',
                 neutral: {
                 black: '#202020',
                 white: '#FAFAFA',

@@ -1,0 +1,13 @@
+.curve .curve__svg svg, .curve .curve__bg{
+    height: calc(100vh + 600px);
+    @apply fixed pointer-events-none left-0 top-0 z-[95] w-lvw;
+}
+
+.curve .curve__bg{
+    transition: opacity 0s linear 0.1s;
+    @apply bg-cuartary z-[96];
+}
+.curve .curve__route{
+    font-size: clamp(25px, 6vw, 70px);
+    @apply absolute text-tertiary text-center z-[97] left-[50%] top-[40vh] translate-x-[-50%] font-medium uppercase pointer-events-none;
+}
