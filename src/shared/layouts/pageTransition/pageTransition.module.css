@@ -11,3 +11,20 @@
     font-size: clamp(25px, 6vw, 70px);
     @apply fixed text-tertiary text-center z-[97] left-[50%] top-[40vh] translate-x-[-50%] font-medium uppercase pointer-events-none;
 }
+
+.curve .curve__route__transition{
+    @apply translate-x-[-50%] scale-75;
+    animation: 1s ease forwards 1 transition-text;
+}
+
+
+@keyframes transition-text {
+    from{
+        opacity: 0 !important;
+        transform: translateX(-50%) scale(0.75);
+    }
+    to{
+        opacity: 1 !important;
+        transform: translateX(-50%) scale(1);
+    }
+}

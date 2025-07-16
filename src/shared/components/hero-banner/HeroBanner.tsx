@@ -1,6 +1,9 @@
 import Image, { StaticImageData } from "next/image";
+import { motion } from 'framer-motion';
+
 import { Container } from "../container/Container";
 import styles from './heroBanner.module.css';
+import { fadeUpHeroBanner } from "./heroBanner.motion";
 
 type Props = {
     title: string;
@@ -16,23 +19,42 @@ const HeroBanner = ({ title, subtitle, categories, textLink, image, altImage }:P
         <section className="relative overflow-hidden">
             <Container className={ styles.banner }>
                 <article className={ styles.bannerContent }>
-                    <h1 className={ styles.bannerTitle }>{ title }</h1>
-                    <h2 className={ styles.bannerSubititle }>{ subtitle }</h2>
+                    <motion.h1 
+                        className={ styles.bannerTitle }
+                        { ...fadeUpHeroBanner(0.55, 0.15) }
+                    >
+                        { title }
+                    </motion.h1>
+                    <motion.h2 
+                        className={ styles.bannerSubititle }
+                        { ...fadeUpHeroBanner(0.57, 0.13) }
+                    >
+                        { subtitle }
+                    </motion.h2>
                     <div className={ styles.bannerFlex }>
-                        <ul className={ styles.bannerCategories }>
+                        <motion.ul 
+                            className={ styles.bannerCategories }
+                            { ...fadeUpHeroBanner(0.59, 0.11) }
+                        >
                             {categories.map((data, index)=>(
-                            <li key={index}>{ data }</li> 
+                                <li key={index}>{ data }</li> 
                             ))}
-                        </ul>
-                        <div className={ styles.bannerLink }>
-                            <a href="https://discord.com/invite/blotcraft" target="_blank">{ textLink }</a>
-                        </div>
+                        </motion.ul>
+                        <motion.div 
+                            className={ styles.bannerLink }
+                            { ...fadeUpHeroBanner(0.59, 0.09) }
+                        >
+                            <a href="https://discord.com/invite/blotcraft" target="_blank" rel="noopener noreferrer">{ textLink }</a>
+                        </motion.div>
                     </div>
                 </article>
             </Container>
-            <section className={ styles.bannerImage }>
+            <motion.section 
+                className={ styles.bannerImage }
+                { ...fadeUpHeroBanner(0.62, 0.08) }
+            >
                 <Image src={ image } alt={ altImage } />
-            </section>
+            </motion.section>
         </section>
     )
 }

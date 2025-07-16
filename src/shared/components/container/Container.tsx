@@ -16,7 +16,7 @@ const Container = ({ children, className, ...PropSection }:Props):JSX.Element =>
 
     return (
         <motion.section 
-            className={`${styles.container} ${isInView ? "animate-container" : ""} ${className ?? ""}`}
+            className={`${styles.container} ${isInView ? `${styles.animateContainer}` : ""} ${className ?? ""}`}
             onViewportEnter={() => setIsInView(true)} 
             onViewportLeave={() => setIsInView(false)}
             { ...PropSection } 
