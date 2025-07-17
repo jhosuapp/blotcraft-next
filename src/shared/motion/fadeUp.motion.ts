@@ -1,6 +1,6 @@
 import { PartialMotionVariants } from "@/shared/interfaces";
 
-export const fadeUpHeroBanner = (delayAnimate: number, delayExit: number):PartialMotionVariants => {
+export const fadeUpMotion = (delayAnimate: number, delayExit: number):PartialMotionVariants => {
     return {
         initial: { translateY: 100 },
         animate: {

@@ -1,6 +1,6 @@
 
 .banner {
-    @apply min-h-[600px] w-[110%] left-[-5%] z-10 px-[10%] pt-[80px] pb-[140px] bg-white flex items-end;
+    @apply min-h-[600px] w-[110%] left-[-5%] z-10 px-[10%] pt-[80px] pb-[140px] bg-cuartary flex items-end;
     border-bottom-left-radius: 3500px 313px;
     border-bottom-right-radius: 3500px 313px;
 }

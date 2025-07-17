@@ -8,6 +8,7 @@ import { routes } from '@/shared/constants';
 import styles from './pageTransition.module.css';
 import { SVG } from './PageTransitionSVG';
 import { useLoaderStore } from '@/shared/stores';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
     children: ReactNode;
@@ -15,6 +16,7 @@ type Props = {
 
 const PageTransition = ({ children }:Props):JSX.Element => {
     const router = useRouter();
+    const { t } = useTranslation('translation');
     const isLoadingDelay = useLoaderStore( state => state.isLoadingDelay );
     const [dimensions, setDimensions] = useState({
         width: null,
@@ -45,7 +47,7 @@ const PageTransition = ({ children }:Props):JSX.Element => {
                     className={ `${styles.curve__route} ${styles.curve__route__transition}` } 
                     {...anim(text)}
                 >
-                    LOADING
+                    {t('loader.textDefault')}
                 </motion.p>
             ) : (
                 <motion.p className={ styles.curve__route } {...anim(text)}>

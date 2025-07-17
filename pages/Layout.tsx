@@ -3,7 +3,6 @@ import previewImage from '@/config/assets/png/preview.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
 import { Footer, Header } from "@/shared/layouts";
-import { Cursor } from "@/shared/components";
 
 type Props = {
   children?: ReactNode;
@@ -49,7 +48,7 @@ const Layout = (
 
     <Header isDark={ isDark } />
     
-    <Cursor />
+    {/* <Cursor /> */}
 
     <main className={`min-h-[100vh] relative ${aeonik.variable} ${minecraft.variable} ${roboto.variable} ${blockletter.variable} ${isDarkBg && 'bg-tertiary'}`}>
       {children}

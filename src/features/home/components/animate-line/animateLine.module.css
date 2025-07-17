@@ -1,0 +1,22 @@
+.animateLine {
+    left: -5%;
+    @apply  h-[50vh] absolute w-full;
+}
+
+.animateLine svg{
+    @apply min-w-[1000px] w-[105%];
+}
+
+.animateLineSecondary{
+    @apply  absolute w-full top-[-50px] right-[-20px] flex justify-end;
+}
+
+.animateLineSecondary svg{
+    @apply  min-w-[450px];
+}
+
+@media(max-width: 768px){
+    .animateLineSecondary svg{
+        @apply  min-w-[250px] max-w-[250px];
+    }
+}
