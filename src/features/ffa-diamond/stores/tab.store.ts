@@ -11,7 +11,7 @@ interface Actions {
 }
 
 const storeAPI: StateCreator<TabState & Actions, [["zustand/devtools", never]]> = (set) =>({
-    currentCategory: 'all',
+    currentCategory: 'deaths',
     
     setCurrentCategory: (value: Icategories) => set(({
         currentCategory: value

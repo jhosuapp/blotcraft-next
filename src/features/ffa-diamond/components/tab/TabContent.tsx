@@ -17,9 +17,17 @@ type Props = {
 
 const TabContent = ({ category }:Props):JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
+    const currentCategory = useTabStore( state => state.currentCategory );
+    const isEnable = currentCategory == category;
     const { page, setPage, ffaUsersQuery, search, setSearch }  = useFfaUsers();
 
-    
+    //Is enable validation
+    if(!isEnable){
+        return (
+            <></>
+        )
+    }
+
     // Catch loading
     if(ffaUsersQuery.isLoading){
         return (
