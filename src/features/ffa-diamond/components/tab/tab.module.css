@@ -148,6 +148,6 @@
         @apply top-[unset] w-full h-[200px] rounded-[20px];
     }
     .TabContentTopItem__card{
-        @apply h-[400px] w-[100%] max-w-[250px];
+        @apply h-[425px] w-[100%] max-w-[250px];
     }
 }

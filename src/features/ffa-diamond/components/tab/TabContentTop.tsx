@@ -1,4 +1,8 @@
+import { motion } from 'framer-motion';
+
+import { fadeInMotion } from '@/shared/motion';
 import { FfaUsersItemInterface, Icategories } from "../../interfaces";
+import { useTabStore } from "../../stores";
 import { TabContentTopItem } from './TabContentTopItem';
 
 import styles from './tab.module.css';
@@ -8,12 +12,25 @@ type Props = {
 }
 
 const TabContentTop = ({ category }:Props):JSX.Element => {
+    const currentCategory = useTabStore( state => state.currentCategory );
+    const isEnable = currentCategory == category;
+
+    //Is enable validation
+    if(!isEnable){
+        return (
+            <></>
+        )
+    }
+
     return (
-        <div className={ styles.tabContentTop }>
+        <motion.div 
+            {...fadeInMotion(0.25)}
+            className={ styles.tabContentTop }
+        >
             {food.map((data, i) => (
                 <TabContentTopItem data={ data } i={ i } key={ i } />
             ))}
-        </div>
+        </motion.div>
     )
 }
 

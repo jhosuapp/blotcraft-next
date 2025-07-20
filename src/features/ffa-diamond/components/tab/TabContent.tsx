@@ -10,6 +10,7 @@ import { Pager } from "../pager/Pager";
 import { useFfaUsers } from "../../hooks";
 import { TabContentItem } from "./TabContentItem";
 import { Search } from '../search/Search';
+import { fadeInMotion } from '@/shared/motion';
 
 type Props = {
     category: Icategories;
@@ -51,12 +52,7 @@ const TabContent = ({ category }:Props):JSX.Element => {
         return (
             <Container className={ styles.tabContentParent }>
                 <motion.section
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                        duration: 0.25,
-                        ease: easeIn
-                    }}
+                    {...fadeInMotion()}
                 >
                     <Search 
                         search={ search }
@@ -74,13 +70,7 @@ const TabContent = ({ category }:Props):JSX.Element => {
     return (
         <Container className={ styles.tabContentParent }>
             <motion.section
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                    duration: 0.25,
-                    ease: easeIn
-                }}
+                {...fadeInMotion(0.25)}
             >
                 <Search 
                     search={search}
@@ -88,12 +78,7 @@ const TabContent = ({ category }:Props):JSX.Element => {
                 />
             </motion.section>
             <motion.section className={ styles.tabContent }
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                    duration: 0.25,
-                    ease: easeIn
-                }}
+                {...fadeInMotion(0.25)} 
             >
                 <article className={ styles.tabContentHead }>
                     <div className={ styles.tabContentHeadItem }>
@@ -111,12 +96,7 @@ const TabContent = ({ category }:Props):JSX.Element => {
                 </article>
             </motion.section>
             <motion.section className={styles.tabContentPager}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                    duration: 0.25,
-                    ease: easeIn
-                }}
+                {...fadeInMotion(0.25)}
             >
                 <Pager
                     totalPages={ffaUsersQuery.data.pagination.totalPages}

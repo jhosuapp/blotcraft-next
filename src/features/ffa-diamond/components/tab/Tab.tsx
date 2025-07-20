@@ -3,9 +3,11 @@ import styles from './tab.module.css';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { TabContentTop } from './TabContentTop';
+import { useTabStore } from '../../stores';
 
 const Tab = ():JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
+     const currentCategory = useTabStore( state => state.currentCategory );
 
     return (
         <section className={ styles.tab }>
@@ -31,9 +33,17 @@ const Tab = ():JSX.Element => {
                 <TabContentTop 
                     category='deaths'
                 />
-                <TabContent
-                    category='all'
+                <TabContentTop 
+                    category='kills'
                 />
+                <TabContentTop 
+                    category='ks'
+                />
+                {currentCategory === 'all' && (
+                    <TabContent
+                        category='all'
+                    />
+                )}
             </section>
         </section>
     )

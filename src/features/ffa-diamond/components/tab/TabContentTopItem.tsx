@@ -6,6 +6,7 @@ import { FfaUsersItemInterface } from '../../interfaces';
 import styles from './tab.module.css';
 import skin from '@/config/assets/webp/skin.webp';
 import iconMedal from '@/config/assets/svg/icon-medal.svg';
+import { Skin3d } from '@/shared/components';
 
 type Props =  {
     i: number;
@@ -41,7 +42,7 @@ const TabContentTopItem = ({ i, data }: Props) => {
                 {position <= 3 && <Image className={ styles.TabContentTopItem__medal } src={ iconMedal } alt='Icon medal' />}
                 <p className={ styles.TabContentTopItem__position }>#{ position }</p>
                 <p className={ styles.TabContentTopItem__name }>{data.name}</p>
-                <Image src={ `https://mc-heads.net/body/${data.name}/right/100` } width={120} height={120} alt='skin' />
+                <Skin3d username={ data.name } />
             </motion.div>
         </motion.div>
     )
