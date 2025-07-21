@@ -14,8 +14,7 @@ const Skin3d = ({ username }: Props):JSX.Element => {
         const viewer = new SkinViewer({
             width: 200,
             height: 300,
-            canvas: canvasRef.current,
-            skin: `https://mc-heads.net/skin/${username}`,
+            canvas: canvasRef.current,            skin: `https://mc-heads.net/skin/${username}`,
         });
 
         viewer.autoRotate = true;

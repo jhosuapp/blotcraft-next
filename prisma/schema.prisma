@@ -22,3 +22,16 @@ model ffa_users {
   weather         Boolean
   killsVisibility String  @db.MediumText
 }
+
+model guilds_guilds {
+  id         Int    @id @default(autoincrement())
+  guildId    String @db.MediumText
+  name       String @db.MediumText
+  tag        String @db.MediumText
+  owner      String @db.MediumText
+  members    String @db.MediumText
+  allies     String @db.MediumText
+  enemies    String @db.MediumText
+  leftColor  String @db.MediumText
+  rightColor String @db.MediumText
+}

@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { FloatingDots, HeroBanner } from "@/shared/components";
-import image from '@/config/assets/webp/bg-ffa-diamond.jpg';
+import { FloatingDots } from "@/shared/components";
 import { Tab } from "../components";
 
 const FfaDiamondView = ():JSX.Element => {
@@ -12,14 +11,7 @@ const FfaDiamondView = ():JSX.Element => {
             {/* Animations stars floating */}
             <FloatingDots />
             {/* Hero banner */}
-            <HeroBanner 
-                title={ t('title') }
-                subtitle={'Blotcraft'}
-                categories={['FFA', 'PVP', 'Minecraft', '1.12+']}
-                textLink={ t('discord') }
-                image={ image }
-                altImage={ 'discord blotcraft' }
-            />
+            <h1 className="pb-[80px] pt-[120px] text-center text-[25px] text-white lg:text-[50px]">FFA DIAMOND</h1>
             {/* Tab categories */}
             <Tab />
         </>

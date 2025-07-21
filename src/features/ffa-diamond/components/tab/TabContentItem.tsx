@@ -23,7 +23,7 @@ const TabContentItem = ({ data }:Props):JSX.Element => {
             {...fadeInMotion()}
         >
             <p>
-                <Image src={ steve } alt="steve head" />
+                <Image src={ `https://mc-heads.net/avatar/${data.name}` } width={20} height={20} alt="steve head" />
                 { data.name }
             </p>
             <p>{ data.kills }</p>

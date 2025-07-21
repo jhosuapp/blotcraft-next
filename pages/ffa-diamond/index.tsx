@@ -6,14 +6,13 @@ import { useTranslation } from "react-i18next";
 
 const FfaDiamond = ():JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
-    const scrollLimit = useScrollLimit(900);
 
     return (
         <Layout 
             title={t('seo.title')}
             description={t('seo.description')}
             isDarkBg
-            isDark={scrollLimit}
+            isDark={true}
             textPage={t('seo.nextPage')}
             linkPage={'/ffa-netherite'}
         >

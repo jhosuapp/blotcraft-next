@@ -13,6 +13,10 @@ const Tab = ():JSX.Element => {
         <section className={ styles.tab }>
             <section className={ styles.tabButtons }>
                 <TabButton 
+                    text={ t('allUsers') }
+                    category='all'
+                />
+                <TabButton 
                     text={ t('top10Deaths') }
                     category='deaths'
                 />
@@ -24,12 +28,13 @@ const Tab = ():JSX.Element => {
                     text={ t('top10Streak') }
                     category='ks'
                 />
-                <TabButton 
-                    text={ t('allUsers') }
-                    category='all'
-                />
             </section>
             <section className={ styles.tabContent }>
+                {currentCategory === 'all' && (
+                    <TabContent
+                        category='all'
+                    />
+                )}
                 <TabContentTop 
                     category='deaths'
                 />
@@ -39,11 +44,6 @@ const Tab = ():JSX.Element => {
                 <TabContentTop 
                     category='ks'
                 />
-                {currentCategory === 'all' && (
-                    <TabContent
-                        category='all'
-                    />
-                )}
             </section>
         </section>
     )

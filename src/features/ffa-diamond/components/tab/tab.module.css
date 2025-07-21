@@ -76,17 +76,21 @@
 }
 
 .tabContentBodyItem{
-    @apply bg-black border-t odd:bg-gray-800;
+    @apply bg-[#2C1E30] odd:bg-[#1E1825];
+}
+
+.tabContentBodyItem img{
+    @apply rounded-[5px];
 }
 
 .tabContentParent{
-    @apply min-h-[700px];
+    @apply min-h-[700px] max-w-[1500px] mx-auto;
 }
 
 /* Pager */
 
 .tabContentPager{
-    @apply min-h-[50px] w-full flex justify-end bg-secondary border-t rounded-b-[10px];
+    @apply min-h-[50px] w-full flex justify-end bg-secondary rounded-b-[10px];
 }
 
 @media(max-width: 500px){
