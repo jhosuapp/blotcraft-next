@@ -13,11 +13,11 @@ const HeaderLogo = ():JSX.Element => {
                 <span className={`${styles.headerLogo__item} hover:!text-primary ${hamburger && '!text-primary'}`}>L</span>
                 <span className={`${styles.headerLogo__item} hover:!text-primary ${hamburger && '!text-primary'}`}>O</span>
                 <span className={`${styles.headerLogo__item} hover:!text-primary ${hamburger && '!text-primary'}`}>T</span>
-                <span className={`${styles.headerLogo__item} hover:!text-secondary ${hamburger && '!text-secondary'}`}>C</span>
-                <span className={`${styles.headerLogo__item} hover:!text-secondary ${hamburger && '!text-secondary'}`}>R</span>
-                <span className={`${styles.headerLogo__item} hover:!text-secondary ${hamburger && '!text-secondary'}`}>A</span>
-                <span className={`${styles.headerLogo__item} hover:!text-secondary ${hamburger && '!text-secondary'}`}>F</span>
-                <span className={`${styles.headerLogo__item} hover:!text-secondary ${hamburger && '!text-secondary'}`}>T</span>
+                <span className={`${styles.headerLogo__item} hover:!text-fifth ${hamburger && '!text-primary'}`}>C</span>
+                <span className={`${styles.headerLogo__item} hover:!text-fifth ${hamburger && '!text-primary'}`}>R</span>
+                <span className={`${styles.headerLogo__item} hover:!text-fifth ${hamburger && '!text-primary'}`}>A</span>
+                <span className={`${styles.headerLogo__item} hover:!text-fifth ${hamburger && '!text-primary'}`}>F</span>
+                <span className={`${styles.headerLogo__item} hover:!text-fifth ${hamburger && '!text-primary'}`}>T</span>
             </Link>
         </div>
     )

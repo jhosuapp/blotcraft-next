@@ -44,6 +44,7 @@
 
 .loaderInner3:before{
     @apply bg-primary;
+    background-color: #720707;
 }
 
 .loaderInner4{

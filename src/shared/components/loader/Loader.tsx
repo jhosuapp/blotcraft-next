@@ -18,11 +18,11 @@ const Loader = ():JSX.Element => {
                     <p style={{ animationDelay: '0.125s' }} className={`text-primary ${styles.blot}`}>L</p>
                     <p style={{ animationDelay: '0.15s' }} className={`text-primary ${styles.blot}`}>O</p>
                     <p style={{ animationDelay: '0.175s' }} className={`text-primary ${styles.blot}`}>T</p>
-                    <p style={{ animationDelay: '0.2s' }} className={`text-secondary ${styles.craft}`}>C</p>
-                    <p style={{ animationDelay: '0.225s' }} className={`text-secondary ${styles.craft}`}>R</p>
-                    <p style={{ animationDelay: '0.25s' }} className={`text-secondary ${styles.craft}`}>A</p>
-                    <p style={{ animationDelay: '0.275s' }} className={`text-secondary ${styles.craft}`}>F</p>
-                    <p style={{ animationDelay: '0.3s' }} className={`text-secondary ${styles.craft}`}>T</p>
+                    <p style={{ animationDelay: '0.2s' }} className={`text-fifth ${styles.craft}`}>C</p>
+                    <p style={{ animationDelay: '0.225s' }} className={`text-fifth ${styles.craft}`}>R</p>
+                    <p style={{ animationDelay: '0.25s' }} className={`text-fifth ${styles.craft}`}>A</p>
+                    <p style={{ animationDelay: '0.275s' }} className={`text-fifth ${styles.craft}`}>F</p>
+                    <p style={{ animationDelay: '0.3s' }} className={`text-fifth ${styles.craft}`}>T</p>
                 </div>
             </article>
         </section>

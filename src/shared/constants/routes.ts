@@ -1,5 +1,5 @@
 export const routes = {
-    "/": "Blootcraft",
+    "/": "Blotcraft",
     "/ffa-diamond": "FFA Diamond",
     "/ffa-netherite": "FFA Netherite"
 }
