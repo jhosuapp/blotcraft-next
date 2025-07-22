@@ -10,8 +10,6 @@ const FfaDiamondView = ():JSX.Element => {
         <>
             {/* Animations stars floating */}
             <FloatingDots />
-            {/* Hero banner */}
-            <h1 className="pb-[80px] pt-[120px] text-center text-[25px] text-white lg:text-[50px]">FFA DIAMOND</h1>
             {/* Tab categories */}
             <Tab />
         </>

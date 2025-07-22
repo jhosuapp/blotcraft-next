@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 import { fadeInMotion } from "@/shared/motion";
 import { FfaUsersItemInterface } from "../../interfaces";
+import { useTabStore } from "../../stores";
 
-import steve from '@/config/assets/png/steve.png';
 import styles from './tab.module.css';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const TabContentItem = ({ data }:Props):JSX.Element => {
-
+    const setModalData = useTabStore(state => state.setModalData);
     const kdr = data.kills / data.deaths;
     const formattedKDR = parseFloat(kdr.toFixed(2));
 
@@ -21,6 +21,7 @@ const TabContentItem = ({ data }:Props):JSX.Element => {
             className={ `${styles.tabContentBodyItem}` }
             layout
             {...fadeInMotion()}
+            onClick={ ()=> setModalData(data) }
         >
             <p>
                 <Image src={ `https://mc-heads.net/avatar/${data.name}` } width={20} height={20} alt="steve head" />

@@ -20,6 +20,7 @@ module.exports = {
                 cuartary: '#F0F1FA',
                 fifth: '#00548c',
                 sixth: '#F50F0E',
+                seventh: '#2C1E30',
                 neutral: {
                     black: '#202020',
                     white: '#FAFAFA',

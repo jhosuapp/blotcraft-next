@@ -1,50 +1,21 @@
-import { useTranslation } from 'react-i18next';
-import styles from './tab.module.css';
-import { TabButton } from './TabButton';
-import { TabContent } from './TabContent';
-import { TabContentTop } from './TabContentTop';
+import { AnimatePresence } from 'framer-motion';
 import { useTabStore } from '../../stores';
+import styles from './tab.module.css';
+import { TabContent } from './TabContent';
+import { TabContentTopModal } from './TabContentTopModal';
 
 const Tab = ():JSX.Element => {
-    const { t } = useTranslation('ffaDiamond');
-     const currentCategory = useTabStore( state => state.currentCategory );
-
+    const modalData = useTabStore(state => state.modalData);
     return (
         <section className={ styles.tab }>
-            <section className={ styles.tabButtons }>
-                <TabButton 
-                    text={ t('allUsers') }
-                    category='all'
-                />
-                <TabButton 
-                    text={ t('top10Deaths') }
-                    category='deaths'
-                />
-                <TabButton 
-                    text={ t('top10Kills') }
-                    category='kills'
-                />
-                <TabButton 
-                    text={ t('top10Streak') }
-                    category='ks'
-                />
-            </section>
+            {/* Tab content table */}
             <section className={ styles.tabContent }>
-                {currentCategory === 'all' && (
-                    <TabContent
-                        category='all'
-                    />
-                )}
-                <TabContentTop 
-                    category='deaths'
-                />
-                <TabContentTop 
-                    category='kills'
-                />
-                <TabContentTop 
-                    category='ks'
-                />
+                <TabContent />
             </section>
+            {/* Tab modal detail info user */}
+            <AnimatePresence>
+                {modalData && <TabContentTopModal /> }
+            </AnimatePresence>
         </section>
     )
 }

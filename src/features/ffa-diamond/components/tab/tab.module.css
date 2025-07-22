@@ -1,5 +1,5 @@
 .tab{
-    @apply flex flex-col relative justify-start;
+    @apply flex flex-col relative justify-start pt-[80px];
 }
 
 /* Tab buttons */
@@ -76,7 +76,7 @@
 }
 
 .tabContentBodyItem{
-    @apply bg-[#2C1E30] odd:bg-[#1E1825];
+    @apply bg-seventh odd:bg-[#1E1825];
 }
 
 .tabContentBodyItem img{
@@ -113,33 +113,6 @@
     @apply my-[100px] mx-auto w-[90%] max-w-[1200px] pb-[100px] flex flex-wrap justify-between gap-[60px];
 }
 
-.TabContentTopItem{
-    @apply overflow-hidden flex items-center justify-center relative pt-[20px] w-full max-w-[500px];
-}
-
-.TabContentTopItem__splash{
-    clip-path: path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z");
-    @apply absolute top-0 left-0 right-0 bottom-0 bg-secondary;
-}
-
-.TabContentTopItem__card{
-    box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075);
-    transform-origin: 10% 60%;
-    @apply  w-[300px] h-[430px] flex justify-center items-center rounded-[20px] bg-white flex-col;
-}
-
-.TabContentTopItem__position{
-    @apply text-[25px] text-secondary font-medium absolute top-[5px] left-[5px];
-}
-
-.TabContentTopItem__name{
-    @apply text-secondary font-medium;
-}
-
-.TabContentTopItem__medal{
-    @apply absolute z-[-1] top-[-1px] w-full max-w-[50px];
-}
-
 @media(max-width: 1200px){
     .tabContentTop{
         @apply justify-center;
@@ -153,5 +126,65 @@
     }
     .TabContentTopItem__card{
         @apply h-[425px] w-[100%] max-w-[250px];
+    }
+}
+
+/* Tab modal */
+
+.TabContentTopModal{
+}
+
+.tabContentTopModal__card{
+    @apply flex gap-[100px];
+}
+
+.tabContentTopModal__medal{
+    @apply w-[20px];
+}
+
+.tabContentTopModal__crown{
+    @apply w-[30px] absolute top-0;
+}
+
+.tabContentTopModal__3d{
+    @apply relative pt-[20px] flex flex-col justify-center items-center w-[50%];
+}
+
+.tabContentTopModal__name{
+    @apply absolute flex items-center gap-[5px] bg-tertiary bottom-[20px] px-[10px] py-[5px] text-white rounded-[5px];
+}
+
+.tabContentTopModal__info{
+    @apply w-[50%];
+}
+
+.tabContentTopModal__info::before{
+    @apply absolute w-[50%] h-full right-0 top-0 bg-[#1E1825] content-[""] z-[-1];
+}
+
+.tabContentTopModal__info__stats{
+    @apply text-white text-[30px] uppercase text-center mb-[20px];
+}
+
+.tabContentTopModal__info p{
+    @apply text-white bg-seventh mb-[10px] flex justify-between px-[10px] py-[5px] rounded-[5px] relative overflow-hidden;
+}
+
+.tabContentTopModal__info p img{
+    @apply max-w-[20px] w-full absolute top-[-3px] opacity-40;
+}
+
+@media (max-width: 568px){
+    .tabContentTopModal__card{
+        @apply flex-col items-center gap-[20px];
+    }
+    .tabContentTopModal__info{
+        @apply w-full;
+    }
+    .tabContentTopModal__info::before{
+        @apply h-[200px] w-full bg-seventh;
+    }
+    .tabContentTopModal__info__stats{
+        @apply hidden;
     }
 }

@@ -12,7 +12,7 @@ const Skin3d = ({ username }: Props):JSX.Element => {
         if (!canvasRef.current) return;
 
         const viewer = new SkinViewer({
-            width: 200,
+            width: 120,
             height: 300,
             canvas: canvasRef.current,            skin: `https://mc-heads.net/skin/${username}`,
         });

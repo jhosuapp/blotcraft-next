@@ -12,22 +12,10 @@ import { TabContentItem } from "./TabContentItem";
 import { Search } from '../search/Search';
 import { fadeInMotion } from '@/shared/motion';
 
-type Props = {
-    category: Icategories;
-}
-
-const TabContent = ({ category }:Props):JSX.Element => {
+const TabContent = ():JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
     const currentCategory = useTabStore( state => state.currentCategory );
-    const isEnable = currentCategory == category;
     const { page, setPage, ffaUsersQuery, search, setSearch }  = useFfaUsers();
-
-    //Is enable validation
-    if(!isEnable){
-        return (
-            <></>
-        )
-    }
 
     // Catch loading
     if(ffaUsersQuery.isLoading){
