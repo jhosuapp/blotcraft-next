@@ -1,9 +1,11 @@
 import { HTMLAttributes } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, MotionProps } from 'framer-motion';
 
-import styles from './feedback.module.css';
+import { fadeInMotion } from '@/shared/motion';
 import { containerVariants, pathVariants } from './feedback.motion';
-import { useTranslation } from 'react-i18next';
+
+import styles from './feedback.module.css';
 
 type NativeProps = HTMLAttributes<HTMLElement>;
 
@@ -18,7 +20,10 @@ const Feedback = ({ texFeedback, className, ...props }:Props): JSX.Element => {
     const { t } = useTranslation('translation');
 
     return (
-        <section className={`${styles.feedback} ${className ?? ''}`}>
+        <motion.section 
+            className={`${styles.feedback} ${className ?? ''}`}
+            {...fadeInMotion()}
+        >
             <motion.article
                 initial="hidden"
                 animate="visible"
@@ -42,7 +47,7 @@ const Feedback = ({ texFeedback, className, ...props }:Props): JSX.Element => {
             <motion.article className={styles.feedbackText}>
                 <p>{texFeedback ?? t('feedback.textDefault')}</p>
             </motion.article>
-        </section>
+        </motion.section>
     )
 }
 

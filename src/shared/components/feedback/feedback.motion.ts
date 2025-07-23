@@ -18,7 +18,7 @@ export const pathVariants:Variants = {
     },
     visible: {
         pathLength: 1,
-        fill: "rgb(78, 50, 76)",
+        fill: "rgba(255, 255, 255, 1)",
         transition: {
             pathLength: { 
                 type: "spring", 

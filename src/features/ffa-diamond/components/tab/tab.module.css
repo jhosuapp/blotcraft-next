@@ -46,7 +46,7 @@
 }
 
 .tabContentHeadItem{
-    @apply bg-secondary rounded-t-[10px] min-h-[50px];
+    @apply bg-secondary min-h-[50px];
 }
 
 .tabContentHead,
@@ -62,7 +62,7 @@
 .tabContentHeadItem p,
 .tabContentBodyItem p{
     font-size: clamp(15px, 2vw, 20px);
-    @apply flex-1 text-white px-[20px] py-[10px] flex text-center justify-center items-center gap-[20px] relative overflow-hidden;
+    @apply flex-1 text-white px-5 py-2.5 flex text-center justify-center items-center gap-[20px] relative overflow-hidden;
 }
 
 .tabContentHeadItem img,
@@ -80,17 +80,26 @@
 }
 
 .tabContentBodyItem img{
-    @apply rounded-[5px];
+    @apply rounded-sm;
 }
 
 .tabContentParent{
-    @apply min-h-[700px] max-w-[1500px] mx-auto;
+    @apply min-h-[500px] pt-0;
+}
+
+.tabContentTopParent{
+    @apply pb-0;
+}
+
+.tabContentParent,
+.tabContentTopParent{
+    @apply max-w-[1500px] mx-auto;
 }
 
 /* Pager */
 
 .tabContentPager{
-    @apply min-h-[50px] w-full flex justify-end bg-secondary rounded-b-[10px];
+    @apply min-h-[50px] w-full flex justify-end bg-secondary rounded-b-md;
 }
 
 @media(max-width: 500px){
@@ -110,29 +119,51 @@
 /* Tab content top */
 
 .tabContentTop{
-    @apply my-[100px] mx-auto w-[90%] max-w-[1200px] pb-[100px] flex flex-wrap justify-between gap-[60px];
+    @apply  bg-seventh relative overflow-hidden rounded-md rounded-b-none;
 }
 
-@media(max-width: 1200px){
-    .tabContentTop{
-        @apply justify-center;
-    }
+.tabContentTopTitle{
+    font-size: clamp(15px, 2vw, 20px);
+    @apply bg-secondary w-full px-5 py-2.5 text-white flex justify-between items-center;
 }
 
-@media(max-width: 568px){
-    .TabContentTopItem__splash{
-        clip-path: none;
-        @apply top-[unset] w-full h-[200px] rounded-[20px];
-    }
-    .TabContentTopItem__card{
-        @apply h-[425px] w-[100%] max-w-[250px];
-    }
+.tabContentTopTitle div{
+    @apply flex gap-2;
+}
+
+.tabContentTopTitle button{
+    @apply bg-seventh w-full max-w-[32.5px] min-w-[32.5px] min-h-[32.5px] rounded-full p-2;
+}
+
+.tabContentTopBlock{
+    @apply flex justify-between items-center w-full px-5 py-5 gap-4;
+}
+
+.tabContentItem{
+    @apply relative overflow-hidden min-h-[100px] min-w-[100px] bg-secondary rounded-full cursor-pointer;
+}
+
+.tabContentItem canvas{
+    @apply absolute;
+}
+
+.tabContentItem p{
+    @apply absolute text-white text-center w-full bg-tertiary bottom-[-1] z-10 text-[14px];
+}
+
+.tabContentItem:first-child p{
+    @apply font-medium text-yellow-300;
+}
+
+.tabContentItem:nth-child(2) p{
+    @apply font-medium text-gray-600;
+}
+
+.tabContentItem:nth-child(3) p{
+    @apply font-medium text-amber-800;
 }
 
 /* Tab modal */
-
-.TabContentTopModal{
-}
 
 .tabContentTopModal__card{
     @apply flex gap-[100px];

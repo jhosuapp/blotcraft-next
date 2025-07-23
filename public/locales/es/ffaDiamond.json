@@ -12,6 +12,8 @@
     "userDeaths": "Muertes",
     "userKS": "Racha",
     "userKDR": "KDR",
+    "userPoints": "Puntos",
+    "userStats": "Estadísticas",
 
     "searchButton": "Buscar",
     "searchPlaceholder": "Buscar por nombre",

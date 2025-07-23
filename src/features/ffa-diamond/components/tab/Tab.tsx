@@ -1,22 +1,31 @@
-import { AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fadeUpMotion } from '@/shared/motion';
 import { useTabStore } from '../../stores';
-import styles from './tab.module.css';
 import { TabContent } from './TabContent';
 import { TabContentTopModal } from './TabContentTopModal';
+import { TabContentTop } from './TabContentTop';
+
+import styles from './tab.module.css';
 
 const Tab = ():JSX.Element => {
-    const modalData = useTabStore(state => state.modalData);
+    const { t } = useTranslation('ffaDiamond');
+    const showModal = useTabStore(state => state.showModal);
+
     return (
-        <section className={ styles.tab }>
+        <motion.section 
+            className={ styles.tab }
+            {...fadeUpMotion(0.54, 0.16)}
+        >
+            {/* Tops */}
+            <TabContentTop translation={ t } />
             {/* Tab content table */}
-            <section className={ styles.tabContent }>
-                <TabContent />
-            </section>
+            <TabContent translation={ t } />
             {/* Tab modal detail info user */}
             <AnimatePresence>
-                {modalData && <TabContentTopModal /> }
+                {showModal && <TabContentTopModal translation={ t } /> }
             </AnimatePresence>
-        </section>
+        </motion.section>
     )
 }
 

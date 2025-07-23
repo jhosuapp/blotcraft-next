@@ -1,5 +1,5 @@
 .feedback{
-    @apply flex flex-col gap-[20px] w-full justify-center items-center min-h-[500px] animate-fadeIn;
+    @apply flex flex-col gap-[20px] w-full justify-center items-center min-h-[500px];
 }
 
 .feedbackSvg{
@@ -7,7 +7,7 @@
 }
 
 .feedbackPath{
-    @apply stroke-secondary;
+    @apply stroke-white;
 }
 
 .feedbackText{

@@ -1,38 +1,69 @@
-import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import { fadeInMotion } from '@/shared/motion';
-import { FfaUsersItemInterface, Icategories } from "../../interfaces";
-import { useTabStore } from "../../stores";
+import { fadeUpMotion } from '@/shared/motion';
+import { Container } from '@/shared/components';
+import { Transalations } from '@/shared/interfaces';
+import { FfaUsersItemInterface } from "../../interfaces";
+import { TabContentTopItem } from './TabContentTopItem';
 
 import styles from './tab.module.css';
-import { TabContentTopModal } from './TabContentTopModal';
+import iconSkull from '@/config/assets/svg/icon-skull.svg';
+import iconSword from '@/config/assets/svg/icon-sword.svg';
+import { TabContentTopButton } from './TabContentTopButton';
+import { useTabStore } from '../../stores';
 
 type Props = {
-    category: Icategories;
+    translation: Transalations;
 }
 
-const TabContentTop = ({ category }:Props):JSX.Element => {
-    const currentCategory = useTabStore( state => state.currentCategory );
-    const isEnable = currentCategory == category;
-
-    //Is enable validation
-    // if(!isEnable){
-    //     return (
-    //         <></>
-    //     )
-    // }
+const TabContentTop = ({ translation }:Props):JSX.Element => {
+    const currentCategory = useTabStore(state => state.currentCategory);
 
     return (
-        <>
-            {/* <motion.div 
-                {...fadeInMotion(0.25)}
+        <Container className={ styles.tabContentTopParent }>
+            <motion.section 
+                {...fadeUpMotion(0.54, 0.16)}
                 className={ styles.tabContentTop }
-            >
-                {food.map((data, i) => (
-                    <TabContentTopItem data={ data } i={ i } key={ i } />
-                ))}
-            </motion.div> */}
-        </>
+            >   
+                <article className={ styles.tabContentTopTitle }>
+                    <AnimatePresence mode="wait">
+                        <motion.h2
+                            key={currentCategory}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            Top 10 {currentCategory}
+                        </motion.h2>
+                    </AnimatePresence>
+                    <div>
+                        <TabContentTopButton 
+                            src={ iconSkull } 
+                            category='deaths'
+                        />
+                        <TabContentTopButton 
+                            src={ iconSword } 
+                            category='kills'
+                        />
+                        <TabContentTopButton 
+                            src={ iconSkull } 
+                            category='ks'
+                        />
+                    </div>
+                </article>
+                <motion.article 
+                    className={ styles.tabContentTopBlock }
+                    drag="x"
+                    dragConstraints={{ left: -840, right: 0 }}
+                >
+                    {users.map((data, index)=>(
+                        <TabContentTopItem data={ data } index={ index } key={ index } />
+                    ))}
+                </motion.article>
+            </motion.section>
+        </Container>
     )
 }
 
@@ -40,7 +71,7 @@ const TabContentTop = ({ category }:Props):JSX.Element => {
  * ==============   Data   ================
  */
 
-const food: FfaUsersItemInterface[] = [
+const users: FfaUsersItemInterface[] = [
     {
         id:          1,
         uuid:        '2',

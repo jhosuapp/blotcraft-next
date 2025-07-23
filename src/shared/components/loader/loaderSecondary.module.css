@@ -1,5 +1,5 @@
 .loaderSecondary{
-    @apply w-full flex justify-center items-center flex-col min-h-[500px] animate-fadeIn;
+    @apply w-full flex justify-center items-center flex-col min-h-[500px];
 }
 
 .loaderSecondaryContent { 
@@ -35,7 +35,7 @@
 }
 
 .loaderInner2:before{
-    @apply bg-secondary;
+    @apply bg-seventh;
 }
 
 .loaderInner3{
@@ -44,7 +44,6 @@
 
 .loaderInner3:before{
     @apply bg-primary;
-    background-color: #720707;
 }
 
 .loaderInner4{
@@ -52,7 +51,7 @@
 }
 
 .loaderInner4:before{
-    @apply bg-secondary;
+    @apply bg-seventh;
 }
 
 @keyframes loadingSecondary {

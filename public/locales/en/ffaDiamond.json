@@ -12,6 +12,8 @@
     "userDeaths": "Deaths",
     "userKS": "Kill streak",
     "userKDR": "KDR",
+    "userPoints": "Points",
+    "userStats": "Stats",
 
     "searchButton": "Search",
     "searchPlaceholder": "Search by name",

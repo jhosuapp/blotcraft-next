@@ -1,1 +1,1 @@
-export type Icategories = 'all' | 'deaths' | 'kills' | 'ks';
+export type Icategories =  'deaths' | 'kills' | 'ks';

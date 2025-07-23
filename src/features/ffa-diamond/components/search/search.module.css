@@ -1,5 +1,5 @@
 .search{
-    @apply relative max-w-[500px] m-auto pb-[60px];
+    @apply relative max-w-[500px] m-auto;
 }
 
 .searchButton{
