@@ -19,23 +19,20 @@ const TabContentItem = ({ data, index }:Props):JSX.Element => {
     const formattedKDR = parseFloat(kdr.toFixed(2));
 
     return (
-        <AnimatePresence mode="wait">
-            <motion.div 
-                {...fadeInMotion(index * 0.05)}
-                className={ `${styles.tabContentBodyItem}` }
-                key={ data.name }
-                onClick={ ()=> { setModalData(data), setShowModal(true) } }
-            >
-                <p>
-                    <Image src={ `https://mc-heads.net/avatar/${data.name}` } width={20} height={20} alt="steve head" />
-                    { data.name }
-                </p>
-                <p>{ data.kills }</p>
-                <p>{ data.deaths }</p>
-                <p>{ data.killStreak }</p>
-                <p>{ data.deaths !== 0 ? formattedKDR : '0' }</p>
-            </motion.div>
-        </AnimatePresence>
+        <motion.div 
+            {...fadeInMotion(index * 0.05, index * 0.05)}
+            className={ `${styles.tabContentBodyItem}` }
+            onClick={ ()=> { setModalData(data), setShowModal(true) } }
+        >
+            <p>
+                <Image src={ `https://mc-heads.net/avatar/${data.name}` } width={20} height={20} alt="steve head" />
+                { data.name }
+            </p>
+            <p>{ data.kills }</p>
+            <p>{ data.deaths }</p>
+            <p>{ data.killStreak }</p>
+            <p>{ data.deaths !== 0 ? formattedKDR : '0' }</p>
+        </motion.div>
     )
 }
 

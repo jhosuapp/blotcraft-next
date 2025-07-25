@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'; 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { Container, Feedback, LoaderSecondary } from "@/shared/components";
 
@@ -54,9 +54,7 @@ const TabContent = ({ translation }:Props):JSX.Element => {
 
     return (
         <Container className={ styles.tabContentParent }>
-            <motion.section className={ styles.tabContent }
-                {...fadeInMotion(0.25)} 
-            >
+            <motion.section className={ styles.tabContent }>
                 <article className={ styles.tabContentHead }>
                     <div className={ styles.tabContentHeadItem }>
                         <p>{translation('userName')}</p>
@@ -66,11 +64,16 @@ const TabContent = ({ translation }:Props):JSX.Element => {
                         <p>{translation('userKDR')}</p>
                     </div>
                 </article>
-                <article className={ styles.tabContentBody }>
-                    {ffaUsersQuery.data && ffaUsersQuery.data.data.map((data, index)=>(
-                        <TabContentItem data={data} index={ index } key={index} />
-                    ))}
-                </article>
+                <AnimatePresence mode="wait">
+                    <motion.article 
+                        className={ styles.tabContentBody }
+                        key={ page }
+                    >
+                        {ffaUsersQuery.data && ffaUsersQuery.data.data.map((data, index)=>(
+                            <TabContentItem data={data} index={ index } key={`users-${data.id}`} />
+                        ))}
+                    </motion.article>
+                </AnimatePresence>
             </motion.section>
             <motion.section className={styles.tabContentPager}
                 {...fadeInMotion(0.25)}

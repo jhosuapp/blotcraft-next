@@ -1,7 +1,7 @@
 import { PartialMotionVariants } from "@/shared/interfaces";
 import { easeIn } from "framer-motion";
 
-export const fadeInMotion = (delayAnimate?: number):PartialMotionVariants => {
+export const fadeInMotion = (delayAnimate?: number, delayExit?: number):PartialMotionVariants => {
     return {
         initial:{ opacity: 0 },
         animate:{ 
@@ -13,7 +13,10 @@ export const fadeInMotion = (delayAnimate?: number):PartialMotionVariants => {
             }
         },
         exit:{ 
-            opacity: 0 
+            opacity: 0,
+            transition: {
+                delay: delayExit ?? 0
+            }
         },
     }
 }

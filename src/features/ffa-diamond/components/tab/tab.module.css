@@ -123,7 +123,7 @@
 }
 
 .tabContentTopTitle{
-    font-size: clamp(15px, 2vw, 20px);
+    font-size: clamp(18px, 2vw, 24px);
     @apply bg-secondary w-full px-5 py-2.5 text-white flex justify-between items-center;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .tabContentItem p{
-    @apply absolute text-white text-center w-full bg-tertiary bottom-[-1] z-10 text-[14px];
+    @apply absolute text-white text-center w-full bg-tertiary bottom-[-1px] z-10 text-[14px];
 }
 
 .tabContentItem:first-child p{
@@ -182,7 +182,7 @@
 }
 
 .tabContentTopModal__name{
-    @apply absolute flex items-center gap-[5px] bg-tertiary bottom-[20px] px-[10px] py-[5px] text-white rounded-[5px];
+    @apply absolute flex items-center gap-[5px] bg-tertiary bottom-[20px] px-[10px] py-[5px] text-white rounded-[5px] overflow-hidden;
 }
 
 .tabContentTopModal__info{

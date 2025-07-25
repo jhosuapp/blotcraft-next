@@ -28,9 +28,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }));
 
         res.status(200).json({
-            topKills: parseBigIntFields(topKills),
-            topDeaths: parseBigIntFields(topDeaths),
-            topStreaks: parseBigIntFields(topStreaks),
+            kills: parseBigIntFields(topKills),
+            deaths: parseBigIntFields(topDeaths),
+            ks: parseBigIntFields(topStreaks),
         });
     } catch (error: any) {
         console.error('Error al obtener rankings:', error);

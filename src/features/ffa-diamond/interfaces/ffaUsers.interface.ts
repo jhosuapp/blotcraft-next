@@ -3,6 +3,12 @@ export interface FfaUsersResponseInterface {
   pagination: FfaUsersPaginationInterface
 }
 
+export interface FfaTopResponseInterface {
+  kills: FfaUsersItemInterface[],
+  deaths: FfaUsersItemInterface[],
+  ks: FfaUsersItemInterface[],
+}
+
 export interface FfaUsersItemInterface {
   id:          number;
   uuid:        string;

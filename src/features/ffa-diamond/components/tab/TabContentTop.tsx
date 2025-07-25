@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { fadeUpMotion } from '@/shared/motion';
-import { Container } from '@/shared/components';
+import { Container, Feedback, LoaderSecondary } from '@/shared/components';
 import { Transalations } from '@/shared/interfaces';
 import { FfaUsersItemInterface } from "../../interfaces";
 import { TabContentTopItem } from './TabContentTopItem';
@@ -12,6 +12,7 @@ import iconSkull from '@/config/assets/svg/icon-skull.svg';
 import iconSword from '@/config/assets/svg/icon-sword.svg';
 import { TabContentTopButton } from './TabContentTopButton';
 import { useTabStore } from '../../stores';
+import { useFfaTop } from '../../hooks';
 
 type Props = {
     translation: Transalations;
@@ -19,6 +20,9 @@ type Props = {
 
 const TabContentTop = ({ translation }:Props):JSX.Element => {
     const currentCategory = useTabStore(state => state.currentCategory);
+    const { ffaTopQuery } = useFfaTop();
+
+    console.log(ffaTopQuery.data);
 
     return (
         <Container className={ styles.tabContentTopParent }>
@@ -53,176 +57,21 @@ const TabContentTop = ({ translation }:Props):JSX.Element => {
                         />
                     </div>
                 </article>
-                <motion.article 
-                    className={ styles.tabContentTopBlock }
-                    drag="x"
-                    dragConstraints={{ left: -840, right: 0 }}
-                >
-                    {users.map((data, index)=>(
-                        <TabContentTopItem data={ data } index={ index } key={ index } />
-                    ))}
-                </motion.article>
+                <AnimatePresence mode="wait">
+                    <motion.article 
+                        key={ ffaTopQuery.data[currentCategory][0].id }
+                        className={ styles.tabContentTopBlock }
+                        drag="x"
+                        dragConstraints={{ left: -840, right: 0 }}
+                    >
+                        {ffaTopQuery.data[currentCategory].map((data, index)=>(
+                            <TabContentTopItem data={ data } index={ index } key={ `${index}-${data.id}` } />
+                        ))}
+                    </motion.article>
+                </AnimatePresence>
             </motion.section>
         </Container>
     )
 }
-
-/**
- * ==============   Data   ================
- */
-
-const users: FfaUsersItemInterface[] = [
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Jhosuapp',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Rompepitas',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Killer',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Sqmmo',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'Hakeka',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Emy',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Bbyad',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'deep',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Jhosuapp',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Jhosuapp',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-    {
-        id:          1,
-        uuid:        '2',
-        name:        'Jhosuapp',
-        dateCreated: 'string',
-        last_online: 'string',
-        kitData:     'string',
-        kills:       10,
-        deaths:      10,
-        killStreak:  10,
-        bestStreak:  10,
-        time:        'string',
-        weather:     false,
-        killsVisibility: 'string',
-    },
-]
-
 
 export { TabContentTop }
