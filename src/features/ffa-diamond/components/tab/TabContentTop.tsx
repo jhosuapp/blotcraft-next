@@ -22,7 +22,13 @@ const TabContentTop = ({ translation }:Props):JSX.Element => {
     const currentCategory = useTabStore(state => state.currentCategory);
     const { ffaTopQuery } = useFfaTop();
 
-    console.log(ffaTopQuery.data);
+    // Catch error
+    if(ffaTopQuery.isError){
+        return (
+            <>
+            </>
+        )
+    }
 
     return (
         <Container className={ styles.tabContentTopParent }>

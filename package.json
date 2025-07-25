@@ -10,6 +10,7 @@
     "@prisma/client": "^6.11.1",
     "@tanstack/react-query": "^5.81.5",
     "@tanstack/react-query-devtools": "^5.81.5",
+    "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.10.0",
     "framer-motion": "^12.19.2",
     "i18next": "^25.3.2",

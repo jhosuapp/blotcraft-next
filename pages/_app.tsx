@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
@@ -8,10 +9,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { Loader } from '@/shared/components';
+import { useLenisStore, useLoaderStore } from '@/shared/stores';
 
 import './globals.css';
 import '@/shared/lib/i18n';
-import { useLenisStore, useLoaderStore } from '@/shared/stores';
 
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
@@ -56,6 +57,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 <Loader />
             ) : (
                 <QueryClientProvider client={queryClient}>
+                    <SpeedInsights />
                     <AnimatePresence mode='wait'>
                         <Component key={router.route} {...pageProps} />
                     </AnimatePresence>

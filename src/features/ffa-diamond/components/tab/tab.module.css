@@ -1,5 +1,5 @@
 .tab{
-    @apply flex flex-col relative justify-start pt-[80px];
+    @apply flex flex-col relative justify-start pt-[40px];
 }
 
 /* Tab buttons */
