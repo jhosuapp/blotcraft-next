@@ -1,5 +1,22 @@
 .tab{
-    @apply flex flex-col relative justify-start pt-[40px];
+    @apply flex relative justify-center pt-[140px] w-full;
+}
+
+.tabItemContent{
+    width: calc(100% - 250px);
+}
+
+.tabItemTop {
+    @apply min-w-[250px] bg-secondary bg-opacity-35 h-auto flex items-center justify-center relative rounded-l-md right-[-5px];
+}
+
+@media(max-width: 768px){
+    .tabItemContent {
+        @apply w-full;
+    }
+    .tabItemTop {
+        @apply hidden;
+    }
 }
 
 /* Tab buttons */
@@ -51,12 +68,12 @@
 
 .tabContentHead,
 .tabContentBody{
-    @apply min-w-[400px];
+    @apply min-w-[600px];
 }
 
 .tabContentHeadItem,
 .tabContentBodyItem{
-    @apply flex gap-[20px] min-w-[400px];
+    @apply flex gap-[20px] min-w-[600px];
 }
 
 .tabContentHeadItem p,
@@ -72,7 +89,12 @@
 
 .tabContentHeadItem p:first-child,
 .tabContentBodyItem p:first-child{
-    @apply justify-start;
+    @apply justify-center w-fit max-w-fit pr-0;
+}
+
+.tabContentHeadItem p:nth-child(2),
+.tabContentBodyItem p:nth-child(2){
+    @apply justify-start pl-0;
 }
 
 .tabContentBodyItem{
@@ -91,15 +113,15 @@
     @apply pb-0;
 }
 
-.tabContentParent,
+/* .tabContentParent,
 .tabContentTopParent{
-    @apply max-w-[1500px] mx-auto;
-}
+    @apply max-w-[1600px] mx-auto;
+} */
 
 /* Pager */
 
 .tabContentPager{
-    @apply min-h-[50px] w-full flex justify-end bg-secondary rounded-b-md;
+    @apply min-h-[50px] w-full flex justify-end bg-secondary rounded-b-md relative;
 }
 
 @media(max-width: 500px){

@@ -15,6 +15,8 @@ const DataDefault = {
     time:        'string',
     weather:     false,
     killsVisibility: 'string',
+    position: 1,
+    points: 100000,
 }
 
 const useFfaTop = () => {

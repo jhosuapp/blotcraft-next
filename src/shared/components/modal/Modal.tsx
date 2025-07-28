@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 
 import styles from './modal.module.css';
@@ -12,7 +13,17 @@ type Props = {
 }
 
 const Modal = ({ children, callBackClose }:Props):JSX.Element => {
-    return (
+    const [mounted, setMounted] = useState(false);
+    const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
+
+    useEffect(() => {
+        setMounted(true);
+        setPortalRoot(document.getElementById('portal-modal'));
+    }, []);
+    
+    if (!mounted || !portalRoot) return null;
+
+    return createPortal(
         <motion.section
             className={ styles.modal }
             {...fadeInMotion()}
@@ -27,7 +38,8 @@ const Modal = ({ children, callBackClose }:Props):JSX.Element => {
                 </button>
                 { children }
             </motion.article>
-        </motion.section>
+        </motion.section>,
+        portalRoot
     )
 }
 

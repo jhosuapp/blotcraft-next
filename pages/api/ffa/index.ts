@@ -6,39 +6,43 @@ const prisma = new PrismaClient();
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const page = parseInt(req.query.page as string) || 1;
-        const pageSize = parseInt(req.query.pageSize as string) || 10;
+        const pageSize = parseInt(req.query.pageSize as string) || 8;
         const search = (req.query.search as string) || '';
 
-        // Total de registros (con o sin filtro de búsqueda)
-        const totalItems = await prisma.ffa_users.count({
-            where: {
-                name: {
-                    contains: search,
-                },
-            },
-        });
+        // Obtener todos los usuarios para calcular posición y puntos
+        const allUsers = await prisma.ffa_users.findMany();
 
-        const usersFfa = await prisma.ffa_users.findMany({
-            where: {
-                name: {
-                    contains: search,
-                },
-            },
-            skip: (page - 1) * pageSize,
-            take: pageSize,
-            orderBy: {
-                id: 'asc',
-            },
-        });
-
-        // Convertir BigInt a string
-        const parsed = usersFfa.map(user => ({
+        // Calcular puntos y ordenar
+        const rankedUsers = allUsers
+        .map(user => ({
             ...user,
-            dateCreated: user.dateCreated.toString(),
-            last_online: user.last_online.toString(),
-        }));
+            points: Number(user.kills) - Number(user.deaths),
+        }))
+        .sort((a, b) => b.points - a.points);
 
+        // Asignar posición
+        const rankedWithPosition = rankedUsers.map((user, index) => ({
+            ...user,
+            position: index + 1,
+        }));
+        
+        // Filtrar por búsqueda (si aplica)
+        const filteredUsers = rankedWithPosition.filter(user =>
+            user.name.toLowerCase().includes(search.toLowerCase())
+        );
+
+        const totalItems = filteredUsers.length;
         const totalPages = Math.ceil(totalItems / pageSize);
+
+        // Obtener usuarios paginados
+        const paginatedUsers = filteredUsers.slice((page - 1) * pageSize, page * pageSize);
+
+        // Convertir campos BigInt a string (si es necesario)
+        const parsed = paginatedUsers.map(user => ({
+            ...user,
+            dateCreated: user.dateCreated?.toString() ?? null,
+            last_online: user.last_online?.toString() ?? null,
+        }));
 
         res.status(200).json({
             data: parsed,

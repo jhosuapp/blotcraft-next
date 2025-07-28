@@ -23,6 +23,8 @@ export interface FfaUsersItemInterface {
   time:        string;
   weather:     boolean;
   killsVisibility: string;
+  points: number;
+  position: number;
 }
 
 interface FfaUsersPaginationInterface {

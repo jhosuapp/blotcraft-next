@@ -21,47 +21,43 @@ const TabContent = ({ translation }:Props):JSX.Element => {
     // Catch loading
     if(ffaUsersQuery.isLoading){
         return (
-            <Container className={ styles.tabContentParent }>
-                <LoaderSecondary 
-                    className='!min-h-[500px] bg-secondary rounded-b-md'
-                />
-            </Container>
+            <LoaderSecondary 
+                className='!min-h-[500px] bg-secondary rounded-b-md'
+            />
         )
     }
 
     // Catch error
     if(ffaUsersQuery.isError){
         return (
-            <Container className={ styles.tabContentParent }>
-                <Feedback
-                    className='!min-h-[500px] bg-secondary'
-                />
-            </Container>
+            <Feedback
+                className='!min-h-[500px] bg-secondary'
+            />
         )
     }
 
     // Catch not found users
     if(!ffaUsersQuery.data.data.length || !ffaUsersQuery.data.data){
         return (
-            <Container className={ styles.tabContentParent }>
-                <Feedback
-                    className='!min-h-[500px]'
-                    texFeedback={ `${ translation('notResults') } '${ search }'` }
-                />
-            </Container>
+            <Feedback
+                className='!min-h-[500px]'
+                texFeedback={ `${ translation('notResults') } '${ search }'` }
+            />
         )
     }
 
     return (
-        <Container className={ styles.tabContentParent }>
+        <>
             <motion.section className={ styles.tabContent }>
                 <article className={ styles.tabContentHead }>
                     <div className={ styles.tabContentHeadItem }>
+                        <p>#</p>
                         <p>{translation('userName')}</p>
                         <p>{translation('userKills')}</p>
                         <p>{translation('userDeaths')}</p>
                         <p>{translation('userKS')}</p>
                         <p>{translation('userKDR')}</p>
+                        <p>{translation('userPoints')}</p>
                     </div>
                 </article>
                 <AnimatePresence mode="wait">
@@ -84,7 +80,7 @@ const TabContent = ({ translation }:Props):JSX.Element => {
                     onPageChange={(page) => setPage(page)}
                 />
             </motion.section>
-        </Container>
+        </>
     )
 }
 

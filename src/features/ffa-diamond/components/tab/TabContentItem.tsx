@@ -24,6 +24,7 @@ const TabContentItem = ({ data, index }:Props):JSX.Element => {
             className={ `${styles.tabContentBodyItem}` }
             onClick={ ()=> { setModalData(data), setShowModal(true) } }
         >
+            <p>{ data.position }</p>
             <p>
                 <Image src={ `https://mc-heads.net/avatar/${data.name}` } width={20} height={20} alt="steve head" />
                 { data.name }
@@ -32,6 +33,7 @@ const TabContentItem = ({ data, index }:Props):JSX.Element => {
             <p>{ data.deaths }</p>
             <p>{ data.killStreak }</p>
             <p>{ data.deaths !== 0 ? formattedKDR : '0' }</p>
+            <p>{ data.points }</p>
         </motion.div>
     )
 }
