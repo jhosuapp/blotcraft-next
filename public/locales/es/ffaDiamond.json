@@ -25,5 +25,7 @@
         "description": "Explora FFA Diamond en Minecraft: combate libre con armadura de diamante, estrategia y acción PvP intensas. ¡Demuestra quién es el mejor guerrero!",
 
         "nextPage": "FFA NETHERITE"
-    }
+    },
+
+    "loading": "Cargando..."
 }

@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
@@ -57,7 +56,6 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 <Loader />
             ) : (
                 <QueryClientProvider client={queryClient}>
-                    <SpeedInsights />
                     <AnimatePresence mode='wait'>
                         <Component key={router.route} {...pageProps} />
                     </AnimatePresence>

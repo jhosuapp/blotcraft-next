@@ -15,7 +15,7 @@ const HomeView = ():JSX.Element => {
                 <Hero translation={ t } />
                 {/* Line animate */}
                 <AnimateLine />
-                <section style={{ height: "100vh" }}></section>
+                {/* <section style={{ height: "100vh" }}></section> */}
             </Container>
         </>
     )

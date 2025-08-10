@@ -59,7 +59,7 @@ const HeaderMenu = ({ translation }:Props):JSX.Element => {
                                 linkText={ translation('header.link2') }
                             />
                         </li>
-                        <li>
+                        {/* <li>
                             <HeaderMenuItem 
                                 href='/ffa-netherite' 
                                 linkText={ translation('header.link3') }
@@ -70,7 +70,7 @@ const HeaderMenu = ({ translation }:Props):JSX.Element => {
                                 href='/test' 
                                 linkText={ translation('header.link4') }
                             />
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </section>

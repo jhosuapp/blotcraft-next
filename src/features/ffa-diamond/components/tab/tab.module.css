@@ -131,7 +131,11 @@
     }
     .tabContentHeadItem p:first-child,
     .tabContentBodyItem p:first-child{
-        @apply min-w-[150px] max-w-[150px] text-ellipsis whitespace-nowrap;
+        @apply min-w-[25px] max-w-[25px] text-ellipsis whitespace-nowrap;
+    }
+    .tabContentHeadItem p:nth-child(2),
+    .tabContentBodyItem p:nth-child(2){
+        @apply min-w-[125px] max-w-[125px] text-ellipsis whitespace-nowrap;
     }
     .tabContentPager{
         @apply justify-center;
@@ -241,3 +245,22 @@
         @apply hidden;
     }
 }
+
+/* Top 1 */
+
+.tabTop1{
+    @apply flex flex-col justify-center items-center capitalize w-full p-5;
+}
+
+.tabTop1__block{
+    @apply flex gap-1 justify-center;
+}
+
+.tabTop1__title{
+    @apply text-transparent text-[20px] font-bold inline-block bg-clip-text max-w-[125px] text-ellipsis whitespace-nowrap;
+}
+
+.tabTop1__info{
+    @apply w-full;
+}
+

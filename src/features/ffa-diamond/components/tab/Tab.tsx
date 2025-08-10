@@ -20,7 +20,7 @@ const Tab = ():JSX.Element => {
             {...fadeUpMotion(0.54, 0.16)}
         >
             <article className={ styles.tabItemTop }>
-                <TabTop1 />
+                <TabTop1  translation={ t } />
             </article>
             <article className={ styles.tabItemContent }>
                 {/* Tops */}
