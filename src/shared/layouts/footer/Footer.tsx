@@ -18,12 +18,12 @@ const Footer = ({ textPage, linkPage }:Props):JSX.Element => {
             <FooterTop 
                 translation={ t }
             />
-            <FooterContent
+            {/* <FooterContent
                 textPage={ textPage }
                 linkPage={ linkPage }
                 translation={ t }
             />
-            <FooterStars />
+            <FooterStars /> */}
         </footer>
     )
 }

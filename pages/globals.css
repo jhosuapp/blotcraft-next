@@ -47,7 +47,6 @@ h1, h2, h3, h4, h5, h6{
     @apply w-full left-0;
 }
 
-
 @keyframes text-reveal {
     from{
         opacity: .5;

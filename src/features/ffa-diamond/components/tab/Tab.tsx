@@ -15,24 +15,32 @@ const Tab = ():JSX.Element => {
     const showModal = useTabStore(state => state.showModal);
 
     return (
-        <Container
-            className={ styles.tab }
-            {...fadeUpMotion(0.54, 0.16)}
-        >
-            <article className={ styles.tabItemTop }>
-                <TabTop1  translation={ t } />
-            </article>
-            <article className={ styles.tabItemContent }>
-                {/* Tops */}
-                <TabContentTop translation={ t } />
-                {/* Tab content table */}
-                <TabContent translation={ t } />
-                {/* Tab modal detail info user */}
-                <AnimatePresence>
-                    {showModal && <TabContentTopModal translation={ t } /> }
-                </AnimatePresence>
-            </article>
-        </Container>
+        <section className={ styles.tabContainer }>
+             <motion.h1 
+                className={ styles.tabTitle }
+                {...fadeUpMotion(0.7, 0.16)}
+            >
+                FFA DIAMOND
+            </motion.h1>
+            <Container
+                className={ styles.tab }
+                {...fadeUpMotion(0.54, 0.15)}
+            >
+                <article className={ styles.tabItemTop }>
+                    <TabTop1  translation={ t } />
+                </article>
+                <article className={ styles.tabItemContent }>
+                    {/* Tops */}
+                    <TabContentTop translation={ t } />
+                    {/* Tab content table */}
+                    <TabContent translation={ t } />
+                    {/* Tab modal detail info user */}
+                    <AnimatePresence>
+                        {showModal && <TabContentTopModal translation={ t } /> }
+                    </AnimatePresence>
+                </article>
+            </Container>
+        </section>
     )
 }
 

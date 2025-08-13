@@ -31,7 +31,7 @@ const TabContentTopModal = ({ translation }:Props):JSX.Element => {
                         <Image className={ styles.tabContentTopModal__medal } src={ iconMedal } alt='Icon medal' />
                         <span>{ name }</span>
                     </p>
-                    <Skin3d username={ name } walk />
+                    <Skin3d username={ name } walk autoRotate={false} />
                 </div>
                 <div className={ styles.tabContentTopModal__info }>
                     <h3 className={ styles.tabContentTopModal__info__stats }>{ translation('userStats') }</h3>

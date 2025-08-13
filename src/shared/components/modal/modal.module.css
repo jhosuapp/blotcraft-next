@@ -1,5 +1,5 @@
 .modal{
-    @apply fixed h-svh top-0 left-0 w-full z-20 flex flex-col items-center justify-center;
+    @apply fixed h-svh top-0 left-0 w-full z-[100] flex flex-col items-center justify-center;
 }
 
 .modalBg{

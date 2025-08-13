@@ -1,5 +1,14 @@
 .tab{
-    @apply flex relative justify-center pt-[140px] w-full;
+    @apply flex relative justify-center w-full;
+}
+
+.tabContainer{
+    min-height: calc(100svh - 80px);
+    @apply flex items-center justify-center flex-col;
+}
+
+.tabTitle{
+    @apply text-center text-white mt-[100px] text-[50px] font-bold;
 }
 
 .tabItemContent{
@@ -16,6 +25,9 @@
     }
     .tabItemTop {
         @apply hidden;
+    }
+    .tabTitle{
+        @apply text-[25px];
     }
 }
 
@@ -177,15 +189,23 @@
     @apply absolute text-white text-center w-full bg-tertiary bottom-[-1px] z-10 text-[14px];
 }
 
-.tabContentItem:first-child p{
+.tabContentItem__content {
+    @apply max-w-[100px] flex flex-col justify-center items-center;
+}
+
+.tabContentItem__content h5{
+    @apply text-white text-center mt-2 text-[14px] text-ellipsis whitespace-nowrap max-w-[90px] overflow-hidden;
+}
+
+.tabContentItem__content:first-child .tabContentItem p{
     @apply font-medium text-yellow-300;
 }
 
-.tabContentItem:nth-child(2) p{
+.tabContentItem__content:nth-child(2) .tabContentItem p{
     @apply font-medium text-gray-600;
 }
 
-.tabContentItem:nth-child(3) p{
+.tabContentItem__content:nth-child(3) .tabContentItem p{
     @apply font-medium text-amber-800;
 }
 

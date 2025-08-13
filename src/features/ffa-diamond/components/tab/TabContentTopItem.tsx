@@ -16,18 +16,25 @@ const TabContentTopItem = ({ data, index }:Props):JSX.Element => {
     const setShowModal = useTabStore(state => state.setShowModal);
 
     return (
-        <motion.article 
+        <motion.div 
             {...fadeInMotion(index * 0.05, index * 0.05)}
-            className={ styles.tabContentItem }
-            onClick={ ()=> { setModalData(data), setShowModal(true)} }
+            className={ styles.tabContentItem__content }
         >
-            <p>{ index + 1 }</p>
-            <Skin3d 
-                username={ data.name } 
-                width={100} 
-                height={250} 
-            />
-        </motion.article>
+            <article 
+                className={ styles.tabContentItem }
+                onClick={ ()=> { setModalData(data), setShowModal(true)} }
+            >
+                <p>{ index + 1 }</p>
+                <Skin3d 
+                    username={ data.name } 
+                    width={100} 
+                    height={250} 
+                    autoRotate={false}
+                    walk
+                />
+            </article>
+            <h5>{ data.name }</h5>
+        </motion.div>
     )
 }
 

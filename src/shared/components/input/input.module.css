@@ -1,7 +1,7 @@
 
 .input input{
     transition: .5s ease all;
-    @apply h-[2.5vw] min-h-[40px] w-full block bg-white outline-none px-[20px] text-secondary rounded-[100px] border-white border-2 border-solid; 
+    @apply h-[2.5vw] min-h-[40px] max-h-[50px] w-full block bg-white outline-none px-[20px] text-secondary rounded-[100px] border-white border-2 border-solid; 
 }
 
 .input input:focus{

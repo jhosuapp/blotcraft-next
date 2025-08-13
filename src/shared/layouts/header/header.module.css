@@ -44,7 +44,7 @@
 /* Header hamburger */
 .headerHamburger {
     transition: .25s ease all;
-    @apply bg-tertiary flex justify-center flex-col items-center min-w-[40px] max-w-[2.5vw] w-[2.5vw] min-h-[40px] max-h-[2.5vw] h-[2.5vw] rounded-full;
+    @apply bg-tertiary flex justify-center flex-col items-center min-w-[40px] max-w-[50px] w-[2.5vw] min-h-[40px] max-h-[50px] h-[2.5vw] rounded-full;
 }
 
 .headerHamburger span{
