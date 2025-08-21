@@ -7,7 +7,7 @@ type Props = {
     title: string;
 }
 
-const FfaDiamondView = ({ title }:Props):JSX.Element => {
+const FfaView = ({ title }:Props):JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
 
     return (
@@ -20,4 +20,4 @@ const FfaDiamondView = ({ title }:Props):JSX.Element => {
     )
 }
 
-export { FfaDiamondView }
+export { FfaView }

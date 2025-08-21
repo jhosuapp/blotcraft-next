@@ -15,7 +15,7 @@ const getFfaUsers = async (
 
     params.append('page', `${page}`);
 
-    const { data } = await blootcraftApi.get<FfaUsersResponseInterface>('/ffa',{
+    const { data } = await blootcraftApi.get<FfaUsersResponseInterface>('/ffa-diamond',{
         params
     });
 

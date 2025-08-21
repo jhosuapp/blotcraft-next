@@ -1,2 +1,2 @@
 export * from './home/views/Home.view';
-export * from './ffa-diamond/views/FfaDiamond.view';
+export * from './ffa/views/Ffa.view';
