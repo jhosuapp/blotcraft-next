@@ -18,6 +18,7 @@ const FfaDiamond = ():JSX.Element => {
             <PageTransition>
                 <FfaView
                     title="FFA NETHERITE"
+                    requestType="ffa-netherite"
                 />
             </PageTransition>
         </Layout>

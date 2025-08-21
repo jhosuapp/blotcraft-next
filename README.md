@@ -66,3 +66,6 @@ npm install
 npx prisma generate
 
 npx prisma studio 
+
+npx prisma db pull --schema=prisma/netherite/schema.prisma
+npx prisma db pull --schema=prisma/diamond/schema.prisma

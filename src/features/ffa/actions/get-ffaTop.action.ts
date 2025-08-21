@@ -1,9 +1,8 @@
 import { blootcraftApi } from "@/shared/api";
-import { FfaTopResponseInterface } from "../interfaces";
+import { FfaTopResponseInterface, IrequestType } from "../interfaces";
 
-const getFfaTop = async ():Promise<FfaTopResponseInterface> => {
-
-    const { data } = await blootcraftApi.get<FfaTopResponseInterface>('/ffa-diamond/ranking');
+const getFfaTop = async ( requestType:IrequestType ):Promise<FfaTopResponseInterface> => {
+    const { data } = await blootcraftApi.get<FfaTopResponseInterface>(`/${requestType}/ranking`);
 
     return data;
 }

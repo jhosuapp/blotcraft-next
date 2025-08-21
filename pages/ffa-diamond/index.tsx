@@ -17,7 +17,8 @@ const FfaDiamond = ():JSX.Element => {
         >
             <PageTransition>
                 <FfaView
-                    title="FFFA DIAMOND"
+                    title="FFA DIAMOND"
+                    requestType="ffa-diamond"
                 />
             </PageTransition>
         </Layout>

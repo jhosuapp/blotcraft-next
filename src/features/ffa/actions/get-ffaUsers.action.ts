@@ -1,12 +1,11 @@
 import { blootcraftApi } from "@/shared/api";
-import { FfaUsersResponseInterface } from "../interfaces";
-import { sleep } from "@/shared/utils";
+import { FfaUsersResponseInterface, IrequestType } from "../interfaces";
 
 const getFfaUsers = async (
     page: number,
     search: string,
+    requestType: IrequestType,
 ):Promise<FfaUsersResponseInterface> => {
-
     const params = new URLSearchParams();
 
     if(search !== ''){
@@ -15,7 +14,7 @@ const getFfaUsers = async (
 
     params.append('page', `${page}`);
 
-    const { data } = await blootcraftApi.get<FfaUsersResponseInterface>('/ffa-diamond',{
+    const { data } = await blootcraftApi.get<FfaUsersResponseInterface>(`/${requestType}`,{
         params
     });
 

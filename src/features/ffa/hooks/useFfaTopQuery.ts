@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { getFfaTop } from "../actions";
+import { useTabStore } from "../stores";
 
 const DataDefault = {
     id:          1,
@@ -20,9 +21,11 @@ const DataDefault = {
 }
 
 const useFfaTop = () => {
+    const requestType = useTabStore.getState().requestType;
+
     const ffaTopQuery = useQuery({
-        queryKey: ['ffaTop'],
-        queryFn:  ()=> getFfaTop(),
+        queryKey: [requestType, 'ffaTop'],
+        queryFn:  ()=> getFfaTop(requestType),
         staleTime: 60 * 1000,
         refetchOnWindowFocus: true,
         retry: false,
