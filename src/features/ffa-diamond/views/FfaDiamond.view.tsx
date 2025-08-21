@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 import { FloatingDots } from "@/shared/components";
 import { Tab } from "../components";
 
-const FfaDiamondView = ():JSX.Element => {
+type Props = {
+    title: string;
+}
+
+const FfaDiamondView = ({ title }:Props):JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
 
     return (
@@ -11,7 +15,7 @@ const FfaDiamondView = ():JSX.Element => {
             {/* Animations stars floating */}
             <FloatingDots />
             {/* Tab categories */}
-            <Tab />
+            <Tab title={ title } />
         </>
     )
 }

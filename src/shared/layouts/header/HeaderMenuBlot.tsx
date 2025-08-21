@@ -59,13 +59,13 @@ const HeaderMenu = ({ translation }:Props):JSX.Element => {
                                 linkText={ translation('header.link2') }
                             />
                         </li>
-                        {/* <li>
+                        <li>
                             <HeaderMenuItem 
                                 href='/ffa-netherite' 
                                 linkText={ translation('header.link3') }
                             />
                         </li>
-                        <li>
+                        {/* <li>
                             <HeaderMenuItem 
                                 href='/test' 
                                 linkText={ translation('header.link4') }

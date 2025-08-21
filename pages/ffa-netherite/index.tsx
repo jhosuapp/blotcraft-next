@@ -1,21 +1,27 @@
-import { FfaNetheriteView } from "@/features";
+import { FfaDiamondView } from "@/features";
 import { PageTransition } from "@/shared/layouts";
 import Layout from "pages/Layout";
+import { useTranslation } from "react-i18next";
 
-const FfaNetherite = ():JSX.Element => {
+const FfaDiamond = ():JSX.Element => {
+    const { t } = useTranslation('ffaDiamond');
+
     return (
         <Layout 
-            title="Minecraft PvP al Máximo Nivel | Blotcraft Oficial"
-            description="Únete a Blotcraft, el servidor de Minecraft PvP en español donde el combate es intenso, la competencia es real y cada partida cuenta. ¡Entra ahora y demuestra tu habilidad!"
+            title={t('seo.title')}
+            description={t('seo.description')}
             isDarkBg
-            textPage={'Duels'}
-            linkPage={'/duels'}
+            isDark={true}
+            textPage={t('seo.nextPage')}
+            linkPage={'/ffa-netherite'}
         >
             <PageTransition>
-                <FfaNetheriteView />
+                <FfaDiamondView
+                    title="FFA NETHERITE"
+                />
             </PageTransition>
         </Layout>
     )
 }
 
-export default FfaNetherite;
+export default FfaDiamond;

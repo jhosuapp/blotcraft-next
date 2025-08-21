@@ -7,8 +7,6 @@ const getFfaUsers = async (
     search: string,
 ):Promise<FfaUsersResponseInterface> => {
 
-    await sleep(1500);
-
     const params = new URLSearchParams();
 
     if(search !== ''){

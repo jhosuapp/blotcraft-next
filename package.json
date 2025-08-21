@@ -4,7 +4,14 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "generate:diamond": "prisma generate --schema=prisma/diamond/schema.prisma",
+    "generate:netherite": "prisma generate --schema=prisma/netherite/schema.prisma",
+    "generate:all": "npm run generate:diamond && npm run generate:netherite",
+    "migrate:diamond": "prisma migrate dev --schema=prisma/diamond/schema.prisma",
+    "migrate:netherite": "prisma migrate dev --schema=prisma/netherite/schema.prisma",
+    "studio:diamond": "prisma studio --schema=prisma/diamond/schema.prisma",
+    "studio:netherite": "prisma studio --schema=prisma/netherite/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",

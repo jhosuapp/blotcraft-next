@@ -10,7 +10,12 @@ import { Container } from '@/shared/components';
 
 import styles from './tab.module.css';
 
-const Tab = ():JSX.Element => {
+
+type Props = {
+    title: string;
+}
+
+const Tab = ({ title }:Props):JSX.Element => {
     const { t } = useTranslation('ffaDiamond');
     const showModal = useTabStore(state => state.showModal);
 
@@ -20,7 +25,7 @@ const Tab = ():JSX.Element => {
                 className={ styles.tabTitle }
                 {...fadeUpMotion(0.7, 0.16)}
             >
-                FFA DIAMOND
+                { title }
             </motion.h1>
             <Container
                 className={ styles.tab }

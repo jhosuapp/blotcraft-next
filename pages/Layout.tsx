@@ -1,5 +1,5 @@
 import { minecraft, roboto, blockletter, aeonik } from "@/config/typography";
-import previewImage from '@/config/assets/png/preview.png';
+import previewImage from '@/config/assets/png/preview-update.png';
 import Head from "next/head";
 import React, { ReactNode } from "react";
 import { Footer, Header } from "@/shared/layouts";

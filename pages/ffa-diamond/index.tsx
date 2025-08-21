@@ -1,5 +1,4 @@
 import { FfaDiamondView } from "@/features";
-import { useScrollLimit } from "@/shared/hooks";
 import { PageTransition } from "@/shared/layouts";
 import Layout from "pages/Layout";
 import { useTranslation } from "react-i18next";
@@ -17,7 +16,9 @@ const FfaDiamond = ():JSX.Element => {
             linkPage={'/ffa-netherite'}
         >
             <PageTransition>
-                <FfaDiamondView />
+                <FfaDiamondView
+                    title="FFFA DIAMOND"
+                />
             </PageTransition>
         </Layout>
     )
